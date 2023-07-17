@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-learning website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="coursedetail.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="top-header">
+        <div class="notifications">
+          <h3>All course 28% off for somali people’s.</h3>
+        </div>
+        <div class="social">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-square-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-skype"></i>
+        </div>
+      </div>
+
+      <section>
+        <div class="menu">
+          <div class="left">
+            <div class="logo">
+              <img src="images/logo.png" alt="" />
+              <h3>dugsiiye team</h3>
+            </div>
+
+            <ul>
+              <li><a href="index.html">home</a></li>
+              <li><a href="courses.html">courses</a></li>
+              <li><a href="registration.html">block</a></li>
+              <li><a href="index.html">contact</a></li>
+            </ul>
+          </div>
+          <div class="regitration">
+            <a href="login.html">
+              <div class="signin allbtn"><button>Signin</button></div></a
+            >
+            <a href="registration.html">
+              <div class="signup allbtn"><button>Sign Up</button></div></a
+            >
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="left-content">
+            <h4>Home // courses Detail</h4>
+            <p>Details.</p>
+          </div>
+          <div class="right-content">
+            <img src="images//co.avif" alt="" />
+          </div>
+        </div>
+      </section>
+    </div>
+    <section>
+      <div class="coursesdetail">
+     
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; Team dugsiiye</p>
+    </footer>
+
+
+<script>
+let mainContainer = document.querySelector(".coursesdetail")
+const urldata= new URLSearchParams(window.location.search);
+
+let courses=urldata.get("selectedcourses")
+
+let decodeddata=JSON.parse(decodeURIComponent(courses))
+
+
+
+
+
+  let duration=decodeddata.lessons.reduce(function(acc,value){
+
+          if(!acc.includes(value.duration)){
+            acc.push(value.duration)
+          }
+
+return acc
+
+  },[0])
+
+
+
+
+
+
+  let d=  duration.map(element => {
+ return parseFloat(element)
+  
+});
+
+
+let lastdata=d.reduce(function(acc,val){
+  return acc+val
+})
+console.log(lastdata)
+
+
+  // let courseduration= parseInt(duration)
+
+  // console.log(courseduration)
+
+
+
+
+
+
+
+
+
+
+  mainContainer.innerHTML =`   <div class="left-Description">
+          <div class="image-container">
+            <img src="${decodeddata.photo}" />
+            <div class="coursename">${decodeddata.title}</div>
+          </div>
+          <div class="course_description">
+            <p>
+             ${decodeddata.description}
+            </p>
+          </div>
+          <div class="coursedetail">
+            <h2>course details</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+              aliquid ab, cupiditate consectetur, sed fugit distinctio est
+              soluta, facilis assumenda molestiae rerum. Dolore omnis, aut eius
+              quas voluptate tempore voluptatibus?
+            </p>
+          </div>
+          <div class="curriculum">
+            <h2>curriculum</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+              aliquid ab, cupiditate consectetur, sed fugit distinctio est
+              soluta, facilis assumenda molestiae rerum. Dolore omnis, aut eius
+              quas voluptate tempore voluptatibus?
+            </p>
+          </div>
+          <div class="certification">
+            <h2>certificate</h2>
+         <p>   Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+            animi neque voluptas quo ullam praesentium repellendus harum nihil
+            ipsam sed sequi modi cupiditate reiciendis distinctio suscipit aut
+            deleniti earum officia minus consequatur. In, delectus nisi.</p>
+          </div>
+        </div>
+        <div class="right-description">
+          <div class="card">
+            <h3>free</h3>
+            <div class="content-detail s">
+              <div class="iconwithtext"><i class="fa-solid fa-user-nurse"></i>instructor:</div>
+              <h5>${decodeddata.instructor}</h5>
+            </div>
+            <div class="content-detail">
+              <div class="iconwithtext"><i class="fa-sharp fa-regular fa-clock"></i>Duration:</div>
+              <h5>${lastdata} hours</h5>
+            </div>
+            <div class="content-detail">
+              <div class="iconwithtext"><i class="fa-solid fa-chart-simple"></i>level:</div>
+              <h5>primary</h5>
+            </div>
+            <div class="content-detail">
+              <div class="iconwithtext"><i class="fa-solid fa-book"></i>language:</div>
+              <h5>English</h5>
+            </div>
+            <div class="content-detail">
+              <div class="iconwithtext"><i class="fa-solid fa-certificate"></i>Certicate:</div>
+              <h5>yes</h5>
+            </div>
+            <div class="orderbtn">
+             <button>Enroll now</button>
+            </div>
+          </div>
+        </div>`
+
+
+
+
+  
+
+
+
+</script>
+
+
+  </body>
+</html>

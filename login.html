@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-learning website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="top-header">
+        <div class="notifications">
+          <h3>All course 28% off for somali people’s.</h3>
+        </div>
+        <div class="social">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-square-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-skype"></i>
+        </div>
+      </div>
+      <section>
+        <div class="menu">
+          <div class="left">
+            <div class="logo">
+              <img src="images/logo.png" alt="" />
+              <h3>dugsiiye team</h3>
+            </div>
+            <ul>
+              <li><a href="index.html">home</a></li>
+              <li><a href="courses.html">courses</a></li>
+              <li><a href="">block</a></li>
+              <li><a href="">contact</a></li>
+            </ul>
+          </div>
+          <div class="regitration">
+            <a href="login.html">
+              <div class="signin allbtn"><button>Signin</button></div></a
+            >
+            <a href="registration.html">
+              <div class="signup allbtn"><button>Sign Up</button></div></a
+            >
+          </div>
+        </div>
+        <div class="content">
+          <div class="left-content">
+            <h4>Home // Login</h4>
+            <p>Login.</p>
+          </div>
+          <div class="right-content">
+            <img src="images/kiosk-main-2.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+    </div>
+    <section>
+      <div class="container">
+        <h2>Login Form</h2>
+        <div class="signUP">
+          <img src="images/insert-image-file_22110-499.avif" />
+          <form>
+            <label>Email</label>
+            <input type="text" class="email" placeholder="Enter Email" />
+  
+            <label>password</label>
+            <input
+              type="text"
+              class="password"
+              placeholder="Enter your password"
+            />
+            <button class="submit" type="submit">Submit</button>
+            <p>I don't have an account <span class="span" >sign up</span></p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; Team dugsiiye</p>
+    </footer>
+
+    <script>
+        const email = document.querySelector(".email");
+        const password = document.querySelector(".password");
+        const submitbtn = document.querySelector(".submit");
+        const span = document.querySelector(".span");
+        submitbtn.addEventListener("click", function (e) {
+          e.preventDefault()
+          if (email.value == "" || password.value == "") {
+            alert("Please enter email and password");
+          } else {
+            let data=[]
+            data= JSON.parse( localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")) :[]
+  
+            if(data.some((f)=>{
+             return f.email==email.value && f.password==password.value
+            })){
+              alert ("login successfull")
+              let currentUser=data.filter((current)=>{
+                return current.email==email.value && current.password==password.value
+
+                
+              })[0];
+  
+          
+  
+              localStorage.setItem('currentUser',currentUser.fullname );
+              window.location.href="courses.html"
+            }else{
+              alert ("login failed")
+            }
+          }
+        });
+        span.addEventListener("click",()=>{
+          window.location.href='registration.html'
+  
+        });
+      </script>
+  </body>
+</html>

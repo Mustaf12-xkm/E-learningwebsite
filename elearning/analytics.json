@@ -1,0 +1,215 @@
+{
+	"courses": [
+		{
+			"id": 1,
+			"title": "JavaScript Basics",
+			"enrollmentCount": 50,
+			"completionRate": 0.8,
+			"averageScore": 85
+		},
+		{
+			"id": 2,
+			"title": "CSS Styling",
+			"enrollmentCount": 40,
+			"completionRate": 0.6,
+			"averageScore": 75
+		},
+		{
+			"id": 3,
+			"title": "Python Programming",
+			"enrollmentCount": 35,
+			"completionRate": 0.9,
+			"averageScore": 92
+		},
+		{
+			"id": 4,
+			"title": "HTML5 Fundamentals",
+			"enrollmentCount": 55,
+			"completionRate": 0.7,
+			"averageScore": 80
+		},
+		{
+			"id": 5,
+			"title": "Web Development with React",
+			"enrollmentCount": 30,
+			"completionRate": 0.85,
+			"averageScore": 88
+		},
+		{
+			"id": 6,
+			"title": "Data Science with Python",
+			"enrollmentCount": 25,
+			"completionRate": 0.75,
+			"averageScore": 78
+		},
+		{
+			"id": 7,
+			"title": "Java Programming",
+			"enrollmentCount": 45,
+			"completionRate": 0.9,
+			"averageScore": 90
+		},
+		{
+			"id": 8,
+			"title": "Introduction to Machine Learning",
+			"enrollmentCount": 35,
+			"completionRate": 0.8,
+			"averageScore": 85
+		},
+		{
+			"id": 9,
+			"title": "Android App Development",
+			"enrollmentCount": 40,
+			"completionRate": 0.7,
+			"averageScore": 80
+		},
+		{
+			"id": 10,
+			"title": "Database Management with SQL",
+			"enrollmentCount": 30,
+			"completionRate": 0.85,
+			"averageScore": 88
+		},
+		{
+			"id": 11,
+			"title": "Full-Stack Web Development",
+			"enrollmentCount": 55,
+			"completionRate": 0.8,
+			"averageScore": 85
+		},
+		{
+			"id": 12,
+			"title": "Ethical Hacking and Cybersecurity",
+			"enrollmentCount": 45,
+			"completionRate": 0.75,
+			"averageScore": 78
+		},
+		{
+			"id": 13,
+			"title": "Data Visualization with Tableau",
+			"enrollmentCount": 35,
+			"completionRate": 0.9,
+			"averageScore": 90
+		},
+		{
+			"id": 14,
+			"title": "Python Web Scraping",
+			"enrollmentCount": 30,
+			"completionRate": 0.8,
+			"averageScore": 85
+		},
+		{
+			"id": 15,
+			"title": "Digital Marketing Fundamentals",
+			"enrollmentCount": 40,
+			"completionRate": 0.7,
+			"averageScore": 80
+		},
+		{
+			"id": 16,
+			"title": "Responsive Web Design",
+			"enrollmentCount": 35,
+			"completionRate": 0.85,
+			"averageScore": 88
+		},
+		{
+			"id": 17,
+			"title": "Introduction to Artificial Intelligence",
+			"enrollmentCount": 50,
+			"completionRate": 0.8,
+			"averageScore": 85
+		},
+		{
+			"id": 18,
+			"title": "Software Engineering Principles",
+			"enrollmentCount": 45,
+			"completionRate": 0.75,
+			"averageScore": 78
+		},
+		{
+			"id": 19,
+			"title": "Network Security",
+			"enrollmentCount": 35,
+			"completionRate": 0.9,
+			"averageScore": 90
+		},
+		{
+			"id": 20,
+			"title": "JavaScript Frameworks: React, Angular, Vue",
+			"enrollmentCount": 30,
+			"completionRate": 0.8,
+			"averageScore": 85
+		},
+		{
+			"id": 21,
+			"title": "Cloud Computing with AWS",
+			"enrollmentCount": 40,
+			"completionRate": 0.7,
+			"averageScore": 80
+		},
+		{
+			"id": 22,
+			"title": "Introduction to Data Analysis",
+			"enrollmentCount": 35,
+			"completionRate": 0.85,
+			"averageScore": 88
+		},
+		{
+			"id": 23,
+			"title": "UI/UX Design Fundamentals",
+			"enrollmentCount": 50,
+			"completionRate": 0.8,
+			"averageScore": 85
+		},
+		{
+			"id": 24,
+			"title": "Blockchain Technology",
+			"enrollmentCount": 45,
+			"completionRate": 0.75,
+			"averageScore": 78
+		},
+		{
+			"id": 25,
+			"title": "Artificial Neural Networks",
+			"enrollmentCount": 35,
+			"completionRate": 0.9,
+			"averageScore": 90
+		},
+		{
+			"id": 26,
+			"title": "Mobile App Design",
+			"enrollmentCount": 30,
+			"completionRate": 0.8,
+			"averageScore": 85
+		},
+		{
+			"id": 27,
+			"title": "Introduction to Data Structures",
+			"enrollmentCount": 40,
+			"completionRate": 0.7,
+			"averageScore": 80
+		},
+		{
+			"id": 28,
+			"title": "Introduction to Natural Language Processing",
+			"enrollmentCount": 35,
+			"completionRate": 0.85,
+			"averageScore": 88
+		},
+		{
+			"id": 29,
+			"title": "DevOps Fundamentals",
+			"enrollmentCount": 50,
+			"completionRate": 0.8,
+			"averageScore": 85
+		},
+		{
+			"id": 30,
+			"title": "Introduction to Big Data",
+			"enrollmentCount": 45,
+			"completionRate": 0.75,
+			"averageScore": 78
+		}
+	]
+	
+}

@@ -1,0 +1,218 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500&display=swap');
+
+body{
+    font-family: 'Signika Negative', sans-serif;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+.header {
+  /* margin: 0 15%; */
+  background-color: rgb(238, 251, 243);
+}
+.top-header {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: rgb(4, 50, 59);
+}
+.top-header h3 {
+  color: rgb(195, 194, 194);
+}
+.top-header .social > i {
+  color: rgb(195, 194, 194);
+  padding-left: 10px;
+  cursor: pointer;
+}
+.top-header .social > i:hover {
+  color: brown;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+
+section {
+  padding: 18px 15%;
+}
+.menu {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+}
+.menu .left {
+  display: flex;
+  align-items: center;
+}
+.logo > h3 {
+  text-transform: capitalize;
+}
+.menu .left ul {
+  display: flex;
+  margin-left: 60px;
+}
+.menu .left ul li {
+  margin-left: 10px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 70px;
+}
+.regitration {
+  display: flex;
+}
+.regitration .allbtn button {
+  padding: 15px 20px;
+  margin-left: 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: 1px solid rgb(176, 205, 176);
+  font-size: 16px;
+  cursor: pointer;
+}
+.regitration .allbtn button:hover {
+  background-color: rgb(48, 146, 85);
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+.content {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.right-content {
+  max-width: 300px;
+  align-items: end;
+  width: 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.right-content img {
+  width: 100%;
+  border-radius: 50%;
+}
+.left-content {
+  margin-right: 10px;
+  margin-top: 70px;
+}
+.left-content > h4 {
+  font-size: 20px;
+  text-transform: capitalize;
+  color: rgb(48, 146, 85);
+  margin-bottom: 25px;
+}
+.left-content > p {
+  font-size: 35px;
+  text-transform: capitalize;
+  color: rgb(48, 146, 85);
+  margin-bottom: 20px;
+}
+.left-content > h5 {
+  font-size: 20px;
+  text-transform: capitalize;
+  color: rgb(48, 146, 85);
+  margin-bottom: 25px;
+}
+.coursebtn > button {
+  padding: 20px 35px;
+  margin-left: 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: rgb(48, 146, 85);
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  color: white;
+}
+
+/* popuiral courses */
+
+footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+footer > p {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* courses */
+
+.coursesdetail {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 17px;
+}
+.left-Description .image-container {
+  position: relative;
+}
+.left-Description .image-container img {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+
+.right-description .card {
+  background-color: rgb(199, 227, 211);
+  padding: 15px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+.image{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.image img{
+    width: 150px;
+}
+
+
+
+

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-learning website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="registration.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="top-header">
+        <div class="notifications">
+          <h3>All course 28% off for somali people’s.</h3>
+        </div>
+        <div class="social">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-square-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-skype"></i>
+        </div>
+      </div>
+
+      <section>
+        <div class="menu">
+          <div class="left">
+            <div class="logo">
+              <img src="images/logo.png" alt="" />
+              <h3>dugsiiye team</h3>
+            </div>
+
+            <ul>
+              <li><a href="index.html">home</a></li>
+              <li><a href="courses.html">courses</a></li>
+              <li><a href="registration.html">block</a></li>
+              <li><a href="index.html">contact</a></li>
+            </ul>
+          </div>
+          <div class="regitration">
+            <a href="login.html">  <div class="signin allbtn"><button>Signin</button></div></a>
+            <a href="registration.html"> <div class="signup allbtn"><button>Sign Up</button></div></a>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="left-content">
+            <h4>Home // Registration</h4>
+            <p>Registration.</p>
+          </div>
+          <div class="right-content">
+            <img src="images/kiosk-main-2.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+    </div>
+<section>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <div class="signUP">
+
+
+         <img src="images/insert-image-file_22110-499.avif">
+
+
+          <form>
+            <label>Full name</label>
+            <input type="text" class="fullname" placeholder="Enter full Name" />
+  
+            <label>Email</label>
+            <input type="text" class="email" placeholder="Enter Email" />
+  
+            <label>password</label>
+            <input
+              type="text"
+              class="password"
+              placeholder="Enter your password"
+            />
+  
+            <label>confirm password</label>
+            <input
+              type="text"
+              class="confirm-password"
+              placeholder="confirm password"
+            />
+            <button class="submit" type="submit">Submit</button>
+            <p>I have an account <span class="span" >sign in</span></p>
+          </form>
+        </div>
+      </div>
+</section>
+
+    <footer>
+      <p>&copy; Team dugsiiye</p>
+    </footer>
+
+    <script>
+
+
+const submitbtn = document.querySelector(".submit");
+
+const fullname = document.querySelector(".fullname");
+const span = document.querySelector(".span");
+const email = document.querySelector(".email");
+const password = document.querySelector(".password");
+const confirmpassword = document.querySelector(".confirm-password");
+
+submitbtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (
+    fullname.value == "" ||
+    email.value == "" ||
+    confirmpassword.value == "" ||
+    password.value == ""
+  ) {
+    alert("Please enter full informatin");
+  } 
+  else if (password.value !== confirmpassword.value) {
+    alert("plz match password");
+  } else {
+    let myData = {
+      fullname: fullname.value,
+      email: email.value,
+      password: password.value,
+      confirmpassword: confirmpassword.value,
+      enrolledCourses: []
+    };
+
+  let data = [];
+  data= JSON.parse( localStorage.getItem("jsondata"))?JSON.parse(localStorage.getItem("jsondata")) :[]
+ 
+  if(data.some((data)=>{
+    return data.email==email.value
+
+  })){
+    alert("duplicate data ")
+  }else{
+    data.push(myData)
+  localStorage.setItem("users",JSON.stringify(data))
+
+  window.location.href='login.html'
+
+  }
+  }
+});
+span.addEventListener("click",()=>{
+  window.location.href='login.html'
+});
+    </script>
+  </body>
+</html>
