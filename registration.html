@@ -146,7 +146,7 @@ submitbtn.addEventListener("click", (e) => {
     };
 
   let data = [];
-  data= JSON.parse( localStorage.getItem("jsondata"))?JSON.parse(localStorage.getItem("jsondata")) :[]
+  data= JSON.parse( localStorage.getItem("users"))||[]
  
   if(data.some((data)=>{
     return data.email==email.value

@@ -11,6 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="coursedetail.css" />
   </head>
   <body>
@@ -53,8 +54,8 @@
             <div class="account hide">m</div>
             <div class="account-info hide">
               <h4>mustaf hersi</h4>
-              <h5><i class="fa-solid fa-user"></i> my account</h5>
-              <h5><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+              <h5 class="myaccount"><i class="fa-solid fa-user "></i> my account</h5>
+              <h5 class="logout"><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
             </div>
           </div>
         </div>
@@ -78,47 +79,52 @@
             <div class="coursename"></div>
           </div>
           <div class="course_description">
-            <p>
-           
-            </p>
+            <p></p>
           </div>
           <div class="coursedetail">
             <h2>course details</h2>
-            <div class="video">
-           
-            </div>
+            <div class="video"></div>
           </div>
-      
-       
         </div>
         <div class="right-description">
           <div class="card">
             <h3>free</h3>
             <div class="content-detail s">
-              <div class="iconwithtext"><i class="fa-solid fa-user-nurse"></i>instructor:</div>
+              <div class="iconwithtext">
+                <i class="fa-solid fa-user-nurse"></i>instructor:
+              </div>
               <h5></h5>
             </div>
             <div class="content-detail">
-              <div class="iconwithtext"><i class="fa-sharp fa-regular fa-clock"></i>Duration:</div>
-              <h5 class="dura"> hours</h5>
+              <div class="iconwithtext">
+                <i class="fa-sharp fa-regular fa-clock"></i>Duration:
+              </div>
+              <h5 class="dura">hours</h5>
             </div>
             <div class="content-detail">
-              <div class="iconwithtext"><i class="fa-solid fa-chart-simple"></i>level:</div>
+              <div class="iconwithtext">
+                <i class="fa-solid fa-chart-simple"></i>level:
+              </div>
               <h5>primary</h5>
             </div>
             <div class="content-detail">
-              <div class="iconwithtext"><i class="fa-solid fa-book"></i>language:</div>
+              <div class="iconwithtext">
+                <i class="fa-solid fa-book"></i>language:
+              </div>
               <h5>English</h5>
             </div>
             <div class="content-detail">
-              <div class="iconwithtext"><i class="fa-solid fa-certificate"></i>Certicate:</div>
+              <div class="iconwithtext">
+                <i class="fa-solid fa-certificate"></i>Certicate:
+              </div>
               <h5>yes</h5>
             </div>
             <div class="orderbtn">
-             <button>Enroll now</button>
+              <button>Enroll now</button>
             </div>
           </div>
-        </div>`
+        </div>
+        `
       </div>
     </section>
 
@@ -126,109 +132,145 @@
       <p>&copy; Team dugsiiye</p>
     </footer>
 
+    <script>
+      let mainContainer = document.querySelector(".coursesdetail");
+      let logout = document.querySelector(".logout");
+      let myaccount = document.querySelector(".myaccount");
+      let button = document.querySelector(".orderbtn button");
+      let couesanamedetail = document.querySelector(".couesanamedetail");
+      let course_description = document.querySelector(".course_description p");
+      let coursename = document.querySelector(".coursename");
+      let imagecontainer = document.querySelector(".image-container img");
+      let instructor = document.querySelector(".content-detail h5");
+      let dura = document.querySelector(".content-detail .dura");
+      let video = document.querySelector(".video");
+      let orderbtn = document.querySelector(".orderbtn button");
+     
 
-<script>
+      let accountinfo = document.querySelector(".account-info");
+      let account = document.querySelector(".account");
+      let allbtn = document.querySelectorAll(".allbtn");
+      const urldata = new URLSearchParams(window.location.search);
 
+      let courses = urldata.get("selectedcourses");
 
-let mainContainer = document.querySelector(".coursesdetail")
-let couesanamedetail = document.querySelector(".couesanamedetail")
-let course_description = document.querySelector(".course_description p")
-let coursename = document.querySelector(".coursename")
-let imagecontainer = document.querySelector(".image-container img")
-let instructor = document.querySelector(".content-detail h5")
-let dura = document.querySelector(".content-detail .dura")
-let video = document.querySelector(".video")
-let orderbtn = document.querySelector(".orderbtn button")
-
-let accountinfo = document.querySelector(".account-info")
-      let account = document.querySelector(".account")
-      let allbtn = document.querySelectorAll(".allbtn")
-const urldata= new URLSearchParams(window.location.search);
-
-let courses=urldata.get("selectedcourses")
-
-let decodeddata=JSON.parse(decodeURIComponent(courses))
-  let duration=decodeddata.lessons.reduce(function(acc,value){
-
-          if(!acc.includes(value.duration)){
-            acc.push(value.duration)
+      let decodeddata = JSON.parse(decodeURIComponent(courses));
+      let duration = decodeddata.lessons.reduce(
+        function (acc, value) {
+          if (!acc.includes(value.duration)) {
+            acc.push(value.duration);
           }
 
-return acc
+          return acc;
+        },
+        [0]
+      );
+      let d = duration.map((element) => {
+        return parseFloat(element);
+      });
 
-  },[0])
-  let d=  duration.map(element => {
- return parseFloat(element)
-  
-});
+      let lastdata = d.reduce(function (acc, val) {
+        return acc + val;
+      });
 
+      account.addEventListener("click", function () {
+        accountinfo.classList.toggle("hide");
+      });
+      // let courseduration= parseInt(duration)
 
-let lastdata=d.reduce(function(acc,val){
-  return acc+val
-})
+      // console.log(courseduration)
+      couesanamedetail.innerText = decodeddata.title;
+      imagecontainer.setAttribute("src", decodeddata.photo);
+      course_description.innerText = decodeddata.description;
+      coursename.innerText = decodeddata.title;
+      instructor.innerText = decodeddata.instructor;
+      dura.innerText = `${lastdata} hours`;
 
-
-account.addEventListener("click", function() {
-        accountinfo.classList.toggle("hide")
-
-
-      })
-  // let courseduration= parseInt(duration)
-
-  // console.log(courseduration)
-  couesanamedetail.innerText=decodeddata.title
-  imagecontainer.setAttribute("src",decodeddata.photo)
-  course_description.innerText=decodeddata.description
-  coursename.innerText=decodeddata.title
-  instructor.innerText=decodeddata.instructor
-  dura.innerText=`${lastdata} hours`
-
-  decodeddata.lessons.forEach(element => {
-
-    video.innerHTML +=`<div class="title">
-                <i class="fa-solid fa-circle-play"></i> 
+      decodeddata.lessons.forEach((element) => {
+        video.innerHTML += `<div class="title">
+                <i class="fa-solid fa-circle-play"></i>
                 <h5 >${element.content}  <p class="description">${element.title} </p></h5>
-              </div>`
-  });
-  let userdata = JSON.parse(localStorage.getItem('currentUser'));
+              </div>`;
+      });
+      let userdata = JSON.parse(localStorage.getItem("currentUser"));
 
-if(userdata){
+      if (userdata) {
+        allbtn.forEach((element) => {
+          element.classList.add("hide");
 
-  allbtn.forEach(element=>{
-element.classList.add("hide")
+          account.classList.remove("hide");
+        });
+      } else {
+        allbtn.forEach((element) => {
+          element.classList.remove("hide");
 
-account.classList.remove("hide")
-  })
-
-}else{
-  allbtn.forEach(element=>{
-element.classList.remove("hide")
-
-account.classList.add("hide")
-  })
-
-}
-
-displaycoursedetail=()=>{
-  orderbtn.addEventListener('click',(e)=>{
-
-
-     let selectedcourse=JSON.stringify(decodeddata)
-      window.location.href=`coursdisplay.html?selectedcourses=${encodeURIComponent(selectedcourse)}`
-
-  
- 
-    
-          
-
-
-
-      
+          account.classList.add("hide");
         });
       }
-      displaycoursedetail()
-</script>
+
+      displaycoursedetail = () => {
+        let users = JSON.parse(localStorage.getItem("users"))
+            let currentUser = JSON.parse(localStorage.getItem("currentUser")) || []
+            let foundeduser=users.find(user=>user.email===currentUser.email)
+        orderbtn.addEventListener("click", (e) => {
+          
+          if (!userdata) {
+            Swal.fire({
+              title: "before order the course make login",
+              // icon: 'question',
+              // iconHtml: '؟',
+              confirmButtonText: "ok"
+            });
+          }
+          
+          if (foundeduser) {
+
+            if(foundeduser.enrolledCourses.some(enrolled=>enrolled.id===decodeddata.id)){
+              let selectedcourse = JSON.stringify(decodeddata);
+            window.location.href = `coursdisplay.html?selectedcourses=${encodeURIComponent(
+              selectedcourse
+            )}`;
 
 
+              }else{
+                foundeduser.enrolledCourses.push(decodeddata)
+
+                localStorage.setItem("users", JSON.stringify(users))
+              let selectedcourse = JSON.stringify(decodeddata);
+            window.location.href = `coursdisplay.html?selectedcourses=${encodeURIComponent(
+              selectedcourse
+            )}`;
+
+
+              }
+              
+              }else {
+            console.log("user not found")
+
+
+
+          }
+
+        
+          } )
+      
+
+        if(foundeduser.enrolledCourses.some(enrolled=>enrolled.id===decodeddata.id)){
+                button.textContent ="continue learning"
+
+
+              }
+              myaccount.addEventListener("click",()=>{
+                window.location.href="userAccount.html"
+              })
+              logout.addEventListener("click",()=>{
+                localStorage.removeItem("currentUser");
+
+
+                window.location.href="index.html"
+              })
+      };
+      displaycoursedetail();
+    </script>
   </body>
 </html>

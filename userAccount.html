@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-learning website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="useraccount.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="top-header">
+        <div class="notifications">
+          <h3>All course 28% off for somali people’s.</h3>
+        </div>
+        <div class="social">
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-square-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-skype"></i>
+        </div>
+      </div>
+
+      <section>
+        <div class="menu">
+          <div class="left">
+            <div class="logo">
+              <img src="images/logo.png" alt="" />
+              <h3>dugsiiye team</h3>
+            </div>
+
+            <ul>
+              <li><a href="index.html">home</a></li>
+              <li><a href="courses.html">courses</a></li>
+              <li><a href="">block</a></li>
+              <li><a href="">contact</a></li>
+            </ul>
+          </div>
+          <div class="regitration">
+            <a href="login.html">
+              <div class="signin allbtn"><button>Signin</button></div></a
+            >
+            <a href="registration.html">
+              <div class="signup allbtn"><button>Sign Up</button></div></a
+            >
+
+            <div class="account hide">m</div>
+            <div class="account-info hide">
+              <h4>mustaf hersi</h4>
+              <h5 class="myaccount"><i class="fa-solid fa-user "></i> my account</h5>
+              <h5 class="logout"><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="left-content">
+            <h4>Home // My Courses</h4>
+            <p class="couesanamedetail"></p>
+          </div>
+          <div class="right-content">
+            <img src="images//co.avif" alt="" />
+          </div>
+        </div>
+      </section>
+    </div>
+    <section>
+        <div class="orderdetails">
+            <h4>my courses</h4>
+            <h6>A list of all the courses that you have enrolled in</h6>
+            <div class="ordercards">
+             
+             
+        
+              
+            </div>
+        </div>
+    </section>
+
+    <footer>
+      <p>&copy; Team dugsiiye</p>
+    </footer>
+
+    <script>
+      let accountinfo = document.querySelector(".account-info");
+      let account = document.querySelector(".account");
+      let allbtn = document.querySelectorAll(".allbtn");
+      let ordercards = document.querySelector(".ordercards");
+      let logout = document.querySelector(".logout");
+      let myaccount = document.querySelector(".myaccount");
+      myaccount.addEventListener("click",()=>{
+                window.location.href="userAccount.html"
+              })
+              logout.addEventListener("click",()=>{
+                localStorage.removeItem("currentUser");
+
+
+                window.location.href="index.html"
+              })
+      account.addEventListener("click", function () {
+        accountinfo.classList.toggle("hide");
+      });
+
+      let userdata = JSON.parse(localStorage.getItem("currentUser"));
+
+      if (userdata) {
+        allbtn.forEach((element) => {
+          element.classList.add("hide");
+
+          account.classList.remove("hide");
+        });
+      } else {
+        allbtn.forEach((element) => {
+          element.classList.remove("hide");
+
+          account.classList.add("hide");
+        });
+      }
+
+
+
+      let users = JSON.parse(localStorage.getItem("users"))
+      let currentUser = JSON.parse(localStorage.getItem("currentUser")) || []
+      let foundeduser=users.find(user=>user.email===currentUser.email)
+
+      foundeduser.enrolledCourses.forEach((course) => {
+
+        
+        ordercards.innerHTML +=`  <div class="ordercard">
+                    <div class="ordername">${course.title}</div>
+                    <div class="ordercontent">
+                        <div class="imgwithname">
+                           <div class="img">  <img src="${course.photo}" alt=""></div>
+                            <p>${course.description}</p>
+                        </div>
+                        <div class="watchbtn"  ><button data-courseid="${course.id}">watch Now</button></div>
+                    </div>
+                </div>`
+
+
+      })
+
+      const watchbtn=document.querySelectorAll(".watchbtn")
+      watchbtn.forEach(element=>{
+        element.addEventListener("click",(event)=>{
+        let courseid= event.target.dataset.courseid
+    
+        let data=  foundeduser.enrolledCourses.find(c => c.id == courseid)
+     
+
+        let selectedcourse = JSON.stringify(data);
+            window.location.href = `coursdisplay.html?selectedcourses=${encodeURIComponent(
+              selectedcourse
+            )}`;
+   
+
+      
+      })
+      })
+
+
+    </script>
+  </body>
+</html>

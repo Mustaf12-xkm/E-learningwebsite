@@ -1,12 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500&display=swap");
 
-
-
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500&display=swap');
-
-body{
-    font-family: 'Signika Negative', sans-serif;
+body {
+  font-family: "Signika Negative", sans-serif;
 }
-
 
 * {
   margin: 0;
@@ -15,19 +11,28 @@ body{
   list-style: none;
   text-decoration: none;
 }
+.title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 
-
+  padding-bottom: 5px;
+}
+.title > i {
+  margin-right: 10px;
+  font-size: 30px;
+  color: aqua;
+}
 .video {
   border: 1px solid #ccc;
   padding: 10px;
   cursor: pointer;
   margin-bottom: 10px;
- 
 }
 
-.video:hover {
+/* .video:hover {
   background-color: #f5f5f5;
-}
+} */
 .header {
   /* margin: 0 15%; */
   background-color: rgb(238, 251, 243);
@@ -58,11 +63,7 @@ body{
 section {
   padding: 18px 15%;
 }
-main {
-  padding: 10px 5%;
-}
 .menu {
-  position: relative;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -72,6 +73,7 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 20px 10px;
+  position: relative;
 }
 .menu .left {
   display: flex;
@@ -129,12 +131,12 @@ main {
   max-width: 300px;
   align-items: end;
   width: 100%;
-  height: 200px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+  height: 200px;
 }
 .right-content img {
   width: 100%;
@@ -201,12 +203,8 @@ footer > p {
 
 .coursesdetail {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 2fr 1fr;
   gap: 17px;
-  box-shadow: 0px 3px 8px 2px rgba(122,122,122,0.75);
-  -webkit-box-shadow: 0px 3px 8px 2px rgba(122,122,122,0.75);
-  -moz-box-shadow: 0px 3px 8px 2px rgba(122,122,122,0.75);
-  padding: 10px;
 }
 .left-Description .image-container {
   position: relative;
@@ -219,47 +217,104 @@ footer > p {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
-.title{
-  display: flex;
- 
-}
-.title >i{
-  margin-right: 10px;
-  font-size: 30px;
-  color: aqua;
- 
-}
-.title .description{
-  margin-left: 10px;
-}
-.titleplay{
-  padding: 10px 5px;
+.left-Description .image-container .coursename {
+  position: absolute;
+  background-color: aquamarine;
+  left: 30px;
+  bottom: 50px;
+  padding: 10px;
   font-size: 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
+
+.course_description {
+  font-size: 18px;
+  padding: 10px 0 25px 0px;
+}
+.coursedetail {
+  font-size: 18px;
+}
+.coursedetail h2 {
+  padding: 10px 0 25px 0px;
+}
+.curriculum {
+  font-size: 18px;
+}
+
+.curriculum h2 {
+  padding: 13px 0 25px 0px;
+}
+
+.certification {
+  font-size: 18px;
+}
+.certification h2 {
+  padding: 13px 0 25px 0px;
+}
+
 .right-description .card {
-  background-color: rgb(255, 255, 255);
-  padding: 15px;
+  background-color: rgb(199, 227, 211);
+  padding: 0 10px;
   border-radius: 7px;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
-  max-height: 600px;
-  overflow-y: scroll;
-  box-shadow: 0px 0px 8px -1px rgba(79,79,79,0.75);
-  -webkit-box-shadow: 0px 0px 8px -1px rgba(79,79,79,0.75);
-  -moz-box-shadow: 0px 0px 8px -1px rgba(79,79,79,0.75);
-}
-.image{
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.image img{
-    width: 150px;
 }
 
-.account{
+.right-description .card h3 {
+  text-align: center;
+  padding: 30px 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eee;
+}
+
+.right-description .card .content-detail.s {
+  padding-top: 25px;
+}
+.right-description .card .content-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+
+  padding-bottom: 10px;
+}
+.right-description .card .content-detail .iconwithtext {
+  font-size: 20px;
+}
+.right-description .card .content-detail .iconwithtext i {
+  padding-right: 10px;
+  font-size: 20px;
+  color: rgb(32, 107, 88);
+}
+.right-description .card .content-detail h5 {
+  font-size: 16px;
+}
+
+.orderbtn {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.orderbtn button {
+  padding: 15px 35px;
+  font-size: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border: none;
+  background-color: rgb(48, 146, 85);
+  text-transform: capitalize;
+  color: white;
+}
+.account {
   background-color: #007bff;
   width: 40px;
   height: 40px;
@@ -277,79 +332,141 @@ footer > p {
   cursor: pointer;
 }
 
-.account-info{
+.account-info {
   /* max-width: 300px; */
   width: 200px;
-background-color: #f8fffc;
-padding: 10px;
-position: absolute;
-right: 60px;
-top: 50%;
-border-radius: 5px;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
--ms-border-radius: 5px;
--o-border-radius: 5px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-display: flex;
-flex-direction: column;
+  background-color: #f8fffc;
+  padding: 10px;
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 
   -webkit-animation-name: rotateInDownRight;
   animation-name: rotateInDownRight;
-  -webkit-animation-duration: .4s;
+  -webkit-animation-duration: 0.4s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-
-
-
 }
 @-webkit-keyframes rotateInDownRight {
   0% {
-  -webkit-transform-origin: right bottom;
-  transform-origin: right bottom;
-  -webkit-transform: rotate3d(0, 0, 1, 45deg);
-  transform: rotate3d(0, 0, 1, 45deg);
-  opacity: 0;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
   }
   100% {
-  -webkit-transform-origin: right bottom;
-  transform-origin: right bottom;
-  -webkit-transform: none;
-  transform: none;
-  opacity: 1;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
   }
-  }
-  @keyframes rotateInDownRight {
+}
+@keyframes rotateInDownRight {
   0% {
-  -webkit-transform-origin: right bottom;
-  transform-origin: right bottom;
-  -webkit-transform: rotate3d(0, 0, 1, 45deg);
-  transform: rotate3d(0, 0, 1, 45deg);
-  opacity: 0;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+    opacity: 0;
   }
   100% {
-  -webkit-transform-origin: right bottom;
-  transform-origin: right bottom;
-  -webkit-transform: none;
-  transform: none;
-  opacity: 1;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
   }
-  }
-h5{
+}
+h5 {
   color: rgb(5, 143, 136);
   margin-left: 10px;
 }
-h4,h5{
+h4,
+h5 {
   /* background-color: #ccc; */
   margin-bottom: 10px;
   font-size: 16px;
   cursor: pointer;
-
 }
 
-.hide{
+.hide {
   display: none;
 }
 
 
+
+.orderdetails{
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.37);
+-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.37);
+-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.37);
+padding: 10px;
+}
+.orderdetails h6{
+    font-size: 17px;
+}
+
+.ordercard{
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.22);
+-webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.22);
+-moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.22);
+margin: 10px 0;
+}
+
+.ordername{
+    box-shadow: 0 4px 2px -2px rgb(241, 240, 240);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.ordercontent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+.imgwithname{
+    display: flex;
+}
+.img{
+  max-width: 200px;
+}
+.imgwithname img{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+ 
+    width: 100%;
+}
+
+.imgwithname p{
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.watchbtn button{
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+}

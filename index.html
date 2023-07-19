@@ -53,8 +53,8 @@
             <div class="account hide">m</div>
             <div class="account-info hide">
               <h4>mustaf hersi</h4>
-              <h5><i class="fa-solid fa-user"></i> my account</h5>
-              <h5><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+              <h5 class="myaccount"><i class="fa-solid fa-user "></i> my account</h5>
+              <h5 class="logout"><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
             </div>
           </div>
         </div>
@@ -93,7 +93,8 @@
       let accountinfo = document.querySelector(".account-info")
       let account = document.querySelector(".account")
       let allbtn = document.querySelectorAll(".allbtn")
-
+      let logout = document.querySelector(".logout");
+      let myaccount = document.querySelector(".myaccount");
       fetchData =async()=>{
       let url="elearning/analytics.json"
 
@@ -152,6 +153,16 @@
 
 
       })
+
+      myaccount.addEventListener("click",()=>{
+                window.location.href="userAccount.html"
+              })
+              logout.addEventListener("click",()=>{
+                localStorage.removeItem("currentUser");
+
+
+                window.location.href="index.html"
+              })
     </script>
   </body>
 </html>

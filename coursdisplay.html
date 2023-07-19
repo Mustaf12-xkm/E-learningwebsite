@@ -53,8 +53,8 @@
             <div class="account hide">m</div>
             <div class="account-info hide">
               <h4>mustaf hersi</h4>
-              <h5><i class="fa-solid fa-user"></i> my account</h5>
-              <h5><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+              <h5 class="myaccount"><i class="fa-solid fa-user "></i> my account</h5>
+              <h5 class="logout"><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
             </div>
           </div>
         </div>
@@ -106,6 +106,8 @@
       let imagecontainer = document.querySelector(".playvideo");
       let courseName = document.querySelector(".courseName");
       let userdata = JSON.parse(localStorage.getItem("currentUser"));
+      let logout = document.querySelector(".logout");
+      let myaccount = document.querySelector(".myaccount");
 
       if (userdata) {
         allbtn.forEach((element) => {
@@ -189,6 +191,16 @@
           }
         });
       });
+
+      myaccount.addEventListener("click",()=>{
+                window.location.href="userAccount.html"
+              })
+              logout.addEventListener("click",()=>{
+                localStorage.removeItem("currentUser");
+
+
+                window.location.href="index.html"
+              })
     </script>
   </body>
 </html>
