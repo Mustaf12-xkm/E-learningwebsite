@@ -43,8 +43,19 @@
             </ul>
           </div>
           <div class="regitration">
-            <a href="login.html">  <div class="signin allbtn"><button>Signin</button></div></a>
-            <a href="registration.html"> <div class="signup allbtn"><button>Sign Up</button></div></a>
+            <a href="login.html">
+              <div class="signin allbtn"><button>Signin</button></div></a
+            >
+            <a href="registration.html">
+              <div class="signup allbtn"><button>Sign Up</button></div></a
+            >
+
+            <div class="account hide">m</div>
+            <div class="account-info hide">
+              <h4>mustaf hersi</h4>
+              <h5><i class="fa-solid fa-user"></i> my account</h5>
+              <h5><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+            </div>
           </div>
         </div>
 
@@ -103,7 +114,9 @@
 
 
 const submitbtn = document.querySelector(".submit");
-
+let accountinfo = document.querySelector(".account-info")
+      let account = document.querySelector(".account")
+      let allbtn = document.querySelectorAll(".allbtn")
 const fullname = document.querySelector(".fullname");
 const span = document.querySelector(".span");
 const email = document.querySelector(".email");
@@ -152,6 +165,30 @@ submitbtn.addEventListener("click", (e) => {
 span.addEventListener("click",()=>{
   window.location.href='login.html'
 });
+
+let userdata = JSON.parse(localStorage.getItem('currentUser'));
+
+if(userdata){
+
+  allbtn.forEach(element=>{
+element.classList.add("hide")
+
+account.classList.remove("hide")
+  })
+
+}else{
+  allbtn.forEach(element=>{
+element.classList.remove("hide")
+
+account.classList.add("hide")
+  })
+
+}
+account.addEventListener("click", function() {
+        accountinfo.classList.toggle("hide")
+
+
+      })
     </script>
   </body>
 </html>

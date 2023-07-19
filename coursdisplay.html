@@ -49,13 +49,20 @@
             <a href="registration.html">
               <div class="signup allbtn"><button>Sign Up</button></div></a
             >
+
+            <div class="account hide">m</div>
+            <div class="account-info hide">
+              <h4>mustaf hersi</h4>
+              <h5><i class="fa-solid fa-user"></i> my account</h5>
+              <h5><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+            </div>
           </div>
         </div>
 
         <div class="content">
           <div class="left-content">
             <h4>Home // courses Display</h4>
-            <p>courses Display.</p>
+            <p class="courseName"></p>
           </div>
           <div class="right-content">
             <img src="images//co.avif" alt="" />
@@ -63,49 +70,125 @@
         </div>
       </section>
     </div>
-    <section>
+    <main>
       <div class="coursesdetail">
         <div class="right-description">
-          <div class="card">
-            <div class="image">
-           <img src="images/courses.png" alt="">
-           <p>Wireframing and Prototyping</p>
-            </div>
-            <div class="image">
-           <img src="images/courses.png" alt="">
-           <p>Wireframing and Prototyping</p>
-            </div>
-            <div class="image">
-           <img src="images/courses.png" alt="">
-           <p>Wireframing and Prototyping</p>
-            </div>
-            <div class="image">
-           <img src="images/courses.png" alt="">
-           <p>Wireframing and Prototyping</p>
-            </div>
-            <div class="image">
-           <img src="images/courses.png" alt="">
-           <p>Wireframing and Prototyping</p>
-            </div>
-            <div class="image">
-           <img src="images/courses.png" alt="">
-           <p>Wireframing and Prototyping</p>
-            </div>
-          </div>
+          <div class="card"></div>
         </div>
         <div class="left-Description">
+          <h5 class="titleplay">
+        
+          </h5>
           <div class="image-container">
-            <iframe width="100%" height="600"
-            src="https://www.youtube.com/embed/OuoyXiP8E5Y">
+            <iframe
+              style="border: none"
+              class="playvideo"
+              allowfullscreen
+              width="100%"
+              height="600"
+              src="https://www.youtube.com/embed/OuoyXiP8E5Y"
+            >
             </iframe>
-      
           </div>
         </div>
       </div>
-    </section>
+    </main>
 
     <footer>
       <p>&copy; Team dugsiiye</p>
     </footer>
+
+    <script>
+      let accountinfo = document.querySelector(".account-info");
+      let account = document.querySelector(".account");
+      let allbtn = document.querySelectorAll(".allbtn");
+      let card = document.querySelector(".card");
+      let imagecontainer = document.querySelector(".playvideo");
+      let courseName = document.querySelector(".courseName");
+      let userdata = JSON.parse(localStorage.getItem("currentUser"));
+
+      if (userdata) {
+        allbtn.forEach((element) => {
+          element.classList.add("hide");
+
+          account.classList.remove("hide");
+        });
+      } else {
+        allbtn.forEach((element) => {
+          element.classList.remove("hide");
+
+          account.classList.add("hide");
+        });
+      }
+
+      account.addEventListener("click", function () {
+        accountinfo.classList.toggle("hide");
+      });
+
+      const urldata = new URLSearchParams(window.location.search);
+
+      let courses = urldata.get("selectedcourses");
+
+      let decodeddata = JSON.parse(decodeURIComponent(courses));
+      let duration = decodeddata.lessons.reduce(
+        function (acc, value) {
+          if (!acc.includes(value.duration)) {
+            acc.push(value.duration);
+          }
+
+          return acc;
+        },
+        [0]
+      );
+      let d = duration.map((element) => {
+        return parseFloat(element);
+      });
+
+      let lastdata = d.reduce(function (acc, val) {
+        return acc + val;
+      });
+
+      decodeddata.lessons.forEach((Element) => {
+        card.innerHTML += `<div class="video">
+              <div class="title">
+                <i class="fa-solid fa-circle-play"></i>
+                <div class="displaycontent"> 
+                  <h5  class="videodisplay">
+                 ${Element.content}
+                </h5>
+                     <p class="description">  ${Element.duration}</p> 
+                  </div>
+              </div>
+              <a
+                class="url"
+                href="${Element.video}"
+              ></a>
+            </div>`;
+
+            courseName.innerText = Element.title
+         
+
+      });
+
+      let VIDEO = document.querySelectorAll(".video");
+
+
+      VIDEO.forEach((element) => {
+        element.addEventListener("click", (event) => {
+          if (event.target.classList.contains("videodisplay")) {
+            let url =
+              event.target.parentElement.parentElement.parentElement.querySelector(
+                ".url"
+              );
+            let titleplay = document.querySelector(".titleplay");
+        
+            let title =
+              event.target.textContent;
+              titleplay.textContent=title
+            imagecontainer.src = url;
+          }
+        });
+      });
+    </script>
   </body>
 </html>

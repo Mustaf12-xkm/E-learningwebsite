@@ -47,6 +47,13 @@
             <a href="registration.html">
               <div class="signup allbtn"><button>Sign Up</button></div></a
             >
+
+            <div class="account hide">m</div>
+            <div class="account-info hide">
+              <h4>mustaf hersi</h4>
+              <h5><i class="fa-solid fa-user"></i> my account</h5>
+              <h5><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+            </div>
           </div>
         </div>
         <div class="content">
@@ -90,6 +97,10 @@
         const password = document.querySelector(".password");
         const submitbtn = document.querySelector(".submit");
         const span = document.querySelector(".span");
+
+        let accountinfo = document.querySelector(".account-info")
+      let account = document.querySelector(".account")
+      let allbtn = document.querySelectorAll(".allbtn")
         submitbtn.addEventListener("click", function (e) {
           e.preventDefault()
           if (email.value == "" || password.value == "") {
@@ -107,10 +118,11 @@
 
                 
               })[0];
+         
   
           
   
-              localStorage.setItem('currentUser',currentUser.fullname );
+              localStorage.setItem('currentUser',JSON.stringify(currentUser ));
               window.location.href="courses.html"
             }else{
               alert ("login failed")
@@ -121,6 +133,30 @@
           window.location.href='registration.html'
   
         });
+        let userdata = JSON.parse(localStorage.getItem('currentUser'));
+
+if(userdata){
+
+  allbtn.forEach(element=>{
+element.classList.add("hide")
+
+account.classList.remove("hide")
+  })
+
+}else{
+  allbtn.forEach(element=>{
+element.classList.remove("hide")
+
+account.classList.add("hide")
+  })
+
+}
+
+        account.addEventListener("click", function() {
+        accountinfo.classList.toggle("hide")
+
+
+      })
       </script>
   </body>
 </html>

@@ -29,93 +29,129 @@
 
       <section>
         <div class="menu">
-      <div class="left">    <div class="logo">
-        <img src="images/logo.png" alt="" />
-      <h3>dugsiiye team</h3>
-      </div>
+          <div class="left">
+            <div class="logo">
+              <img src="images/logo.png" alt="" />
+              <h3>dugsiiye team</h3>
+            </div>
 
-      <ul>
-        <li><a href="index.html">home</a></li>
-        <li><a href="courses.html">courses</a></li>
-        <li><a href="registration.html">block</a></li>
-        <li><a href="index.html">contact</a></li>
-   
-      </ul></div>
+            <ul>
+              <li><a href="index.html">home</a></li>
+              <li><a href="courses.html">courses</a></li>
+              <li><a href="registration.html">block</a></li>
+              <li><a href="index.html">contact</a></li>
+            </ul>
+          </div>
           <div class="regitration">
-            <a href="login.html">  <div class="signin allbtn"><button>Signin</button></div></a>
-            <a href="registration.html"> <div class="signup allbtn"><button>Sign Up</button></div></a>
+            <a href="login.html">
+              <div class="signin allbtn"><button>Signin</button></div></a
+            >
+            <a href="registration.html">
+              <div class="signup allbtn"><button>Sign Up</button></div></a
+            >
+
+            <div class="account hide">m</div>
+            <div class="account-info hide">
+              <h4>mustaf hersi</h4>
+              <h5><i class="fa-solid fa-user"></i> my account</h5>
+              <h5><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+            </div>
           </div>
         </div>
 
         <div class="content">
-            <div class="left-content">
-                <h4>Start your favourite course</h4>
-                <p>Now learning from anywhere, and build your bright career.</p>
-                <h5>Launch your
-                    Own online yellow-shapelearning Platform Achieve Your
-                    Goals With Educal</h5>
+          <div class="left-content">
+            <h4>Start your favourite course</h4>
+            <p>Now learning from anywhere, and build your bright career.</p>
+            <h5>
+              Launch your Own online yellow-shapelearning Platform Achieve Your
+              Goals With Educal
+            </h5>
 
-                    <div class="coursebtn">
-                        <button>start a course</button>
-                    </div>
+            <div class="coursebtn">
+              <button>start a course</button>
             </div>
-            <div class="right-content">
-                <img src="images/slider-1.webp" alt="">
-            </div>
+          </div>
+          <div class="right-content">
+            <img src="images/slider-1.webp" alt="" />
+          </div>
         </div>
       </section>
     </div>
 
+    <section>
+      <div class="courseinfromation">
+        <h4>Explore Our Popular Courses</h4>
+        <div class="cards-inform"></div>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; Team dugsiiye</p>
+    </footer>
+    <script>
+      let cardbody = document.querySelector(".cards-inform")
+      let accountinfo = document.querySelector(".account-info")
+      let account = document.querySelector(".account")
+      let allbtn = document.querySelectorAll(".allbtn")
 
-<section>
- <div class="courseinfromation">
-    <h4>Explore
-        Our Popular Courses</h4>
-<div class="cards-inform">
+      fetchData =async()=>{
+      let url="elearning/analytics.json"
 
+      let response = await fetch(url)
+      let data = await response.json()
 
-</div>
- </div>
-</section>
-<footer>
-    <p>&copy; Team dugsiiye</p>
-  </footer>
-<script>
-let cardbody = document.querySelector(".cards-inform")
-fetchData =async()=>{
-let url="elearning/analytics.json"
+      data.courses.forEach(element => {
 
-let response = await fetch(url)
-let data = await response.json()
-
-data.courses.forEach(element => {
-  console.log(element)
-  cardbody.innerHTML += `    <div class="card-info">
-        <h2>${element.title}</h2>
-        <div class="info">
-          <div class="item">
-            <p>Enrollment Count: </p>
-            <p class="enrollment-count">${element.enrollmentCount }</p>
-          </div>
-          <div class="item">
-            <p>Completion Rate:</p>
-            <p class="completion-rate"> ${(element.completionRate) *100}%</p>
-          </div>
-          <div class="item">
-            <p>Average Score:</p>
-            <p class="average-score">${element.averageScore}</p>
-          </div>
-        </div>
-      </div>`
-
+        cardbody.innerHTML += `    <div class="card-info">
+              <h2>${element.title}</h2>
+              <div class="info">
+                <div class="item">
+                  <p>Enrollment Count: </p>
+                  <p class="enrollment-count">${element.enrollmentCount }</p>
+                </div>
+                <div class="item">
+                  <p>Completion Rate:</p>
+                  <p class="completion-rate"> ${(element.completionRate) *100}%</p>
+                </div>
+                <div class="item">
+                  <p>Average Score:</p>
+                  <p class="average-score">${element.averageScore}</p>
+                </div>
+              </div>
+            </div>`
 
 
 
-});
 
-}
-fetchData()
+      });
 
-</script>
+
+      let userdata = JSON.parse(localStorage.getItem('currentUser'));
+
+      if(userdata){
+
+        allbtn.forEach(element=>{
+      element.classList.add("hide")
+
+      account.classList.remove("hide")
+        })
+
+      }else{
+        allbtn.forEach(element=>{
+      element.classList.remove("hide")
+
+      account.classList.add("hide")
+        })
+
+      }
+      }
+      fetchData()
+
+      account.addEventListener("click", function() {
+        accountinfo.classList.toggle("hide")
+
+
+      })
+    </script>
   </body>
 </html>
