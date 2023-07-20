@@ -211,16 +211,16 @@
       }
 
       displaycoursedetail = () => {
-        let users = JSON.parse(localStorage.getItem("users"))
+        let users = JSON.parse(localStorage.getItem("users"))|| []
             let currentUser = JSON.parse(localStorage.getItem("currentUser")) || []
             let foundeduser=users.find(user=>user.email===currentUser.email)
+
         orderbtn.addEventListener("click", (e) => {
           
           if (!userdata) {
             Swal.fire({
               title: "before order the course make login",
-              // icon: 'question',
-              // iconHtml: '؟',
+           
               confirmButtonText: "ok"
             });
           }
@@ -257,11 +257,17 @@
           } )
       
 
-        if(foundeduser.enrolledCourses.some(enrolled=>enrolled.id===decodeddata.id)){
+     if(foundeduser){
+      if(foundeduser.enrolledCourses.some(enrolled=>enrolled.id===decodeddata.id)){
                 button.textContent ="continue learning"
 
 
               }
+     }else{
+      return
+     }
+       
+   
               myaccount.addEventListener("click",()=>{
                 window.location.href="userAccount.html"
               })
