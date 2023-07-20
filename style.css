@@ -53,7 +53,7 @@ section {
   justify-content: space-between;
   padding: 20px 10px;
   position: relative;
-  overflow-x: hidden;
+
 }
 .menu .left {
   display: flex;
@@ -424,11 +424,12 @@ h5 {
     position: absolute;
     right: 0;
   top: 100%;
-   right: -1000px;
+  visibility: hidden;
+   /* right: -1000px; */
   }
 
   .left.open {
-    right: 0;
+    visibility: visible;
     transition: 0.4s ease;
     -webkit-transition: 0.4s ease;
     -moz-transition: 0.4s ease;
