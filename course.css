@@ -486,16 +486,11 @@ h4,h5{
     position: absolute;
     right: 0;
   top: 100%;
-   right: -1000px;
+  visibility: hidden;
   }
 
   .left.open {
-    right: 0;
-    transition: 0.4s ease;
-    -webkit-transition: 0.4s ease;
-    -moz-transition: 0.4s ease;
-    -ms-transition: 0.4s ease;
-    -o-transition: 0.4s ease;
+    visibility: visible;
   }
   .menu {
     border: 0;
