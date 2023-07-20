@@ -2,6 +2,7 @@
 
 body {
   font-family: "Signika Negative", sans-serif;
+  overflow-x: hidden;
 }
 * {
   margin: 0;
@@ -179,27 +180,42 @@ footer > p {
 /* courses */
 
 .courses {
-  background-color: rgb(214, 241, 223);
+
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
-  padding: 20px;
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+ 
 }
 .courses .subcat {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
+display: flex;
+  gap: 16px;
+  overflow-x: scroll;
 }
+.subcat::-webkit-scrollbar{
+
+  height: 0;
+}
+
 .courses .category {
-  display: flex;
+  /*display: flex;
   justify-content: space-between;
   align-items: center;
+  */background-color: rgb(214, 241, 223);
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 .search {
-  max-width: 400px;
+  max-width: 100%;
+  min-width: 250px;
   width: 100%;
   height: 70px;
   position: relative;
@@ -209,7 +225,8 @@ footer > p {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  margin-left: 20px;
+  margin-bottom: 10px;
+ 
 }
 ::placeholder {
   font-size: 20px;
@@ -244,7 +261,7 @@ footer > p {
 }
 .cat {
   background-color: rgb(255, 255, 255);
-  padding: 15px 20px;
+  padding: 8px 10px;
   cursor: pointer;
   border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -252,6 +269,13 @@ footer > p {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   font-size: 22px;
+  width: fit-content;
+
+word-wrap:break-word;
+}
+.cat.active{
+  background-color: #4fd471;
+  color: rgb(19, 19, 63);
 }
 
 /* course display */
@@ -268,27 +292,30 @@ footer > p {
 
 .card-course {
   background-color: #ffffff;
-  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+  position: relative;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .card-course .image-container img:hover {
   transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-   
-  transition: 0.5s ease;
-  -webkit-transform: scale(1.1);
+ 
 }
 .card-course .image-container {
-
+  overflow: hidden;
   height: 200px;
   width: 100%;
+  border-radius: 10px 10px 0px 0;
+  -webkit-border-radius: 10px 10px 0px 0;
+  -moz-border-radius: 10px 10px 0px 0;
+  -ms-border-radius: 10px 10px 0px 0;
+  -o-border-radius: 10px 10px 0px 0;
 }
 .card-course .image-container img {
-  
+  transition: all 0.3s ease-in-out;
   width: 100%;
   border-radius: 10px 10px 0 0;
   -webkit-border-radius: 10px 10px 0 0;
@@ -297,6 +324,10 @@ footer > p {
   -o-border-radius: 10px 10px 0 0;
   cursor: pointer;
   height: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
 .description {
@@ -337,6 +368,7 @@ footer > p {
   background-color: #28a745;
   color: white;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .account-info{
@@ -412,4 +444,138 @@ h4,h5{
 
 .hide{
   display: none;
+}
+
+
+.bars {
+  display: none;
+}
+.bars i {
+  font-size: 25px;
+  color: rgb(5, 143, 136);
+}
+
+/* media quey navbar */
+
+@media only screen and (max-width: 1299px) {
+  section {
+    padding: 18px 10%;
+  }
+}
+
+@media only screen and (max-width: 973px) {
+  section {
+    padding: 18px 3%;
+  }
+}
+
+@media only screen and (max-width: 822px) {
+
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(213, 224, 221);
+    padding: 10px;
+    height: fit-content;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    position: absolute;
+    right: 0;
+  top: 100%;
+   right: -1000px;
+  }
+
+  .left.open {
+    right: 0;
+    transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -ms-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+  }
+  .menu {
+    border: 0;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+ 
+}
+  .logo {
+    display: flex;
+
+    /* height: 60px; */
+    align-items: center;
+  }
+  .menu .left ul {
+    display: flex;
+    margin-left: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .menu .left ul li {
+    margin-left: 0px;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 10px;
+    background-color: rgb(245, 241, 241);
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .menu .left ul li:hover {
+    background-color: rgb(237, 230, 230);
+    cursor: pointer;
+  }
+
+  .bars{
+    display: block;
+}
+}
+
+
+@media only screen and (max-width: 602px) {
+  .cat {
+   
+    font-size: 16px;
+
+
+  }
+}
+
+
+@media only screen and (max-width: 778px) {
+  .coursedisplay {
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ 
+  }
+}
+@media only screen and (max-width: 622px) {
+  .content {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 30px;
+  }
+  .right-content {
+    max-width: 100%;
+  
+  }
 }

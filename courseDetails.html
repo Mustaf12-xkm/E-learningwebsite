@@ -30,34 +30,36 @@
 
       <section>
         <div class="menu">
+          <div class="logo">
+            <img src="images/logo.png" alt="" />
+            <h3>dugsiiye team</h3>
+          </div>
           <div class="left">
-            <div class="logo">
-              <img src="images/logo.png" alt="" />
-              <h3>dugsiiye team</h3>
-            </div>
+           
 
             <ul>
               <li><a href="index.html">home</a></li>
               <li><a href="courses.html">courses</a></li>
-              <li><a href="registration.html">block</a></li>
-              <li><a href="index.html">contact</a></li>
+              <li><a href="">block</a></li>
+              <li><a href="">contact</a></li>
             </ul>
-          </div>
-          <div class="regitration">
-            <a href="login.html">
-              <div class="signin allbtn"><button>Signin</button></div></a
-            >
-            <a href="registration.html">
-              <div class="signup allbtn"><button>Sign Up</button></div></a
-            >
-
-            <div class="account hide">m</div>
-            <div class="account-info hide">
-              <h4>mustaf hersi</h4>
-              <h5 class="myaccount"><i class="fa-solid fa-user "></i> my account</h5>
-              <h5 class="logout"><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+            <div class="regitration">
+              <a href="login.html">
+                <div class="signin allbtn"><button>Signin</button></div></a
+              >
+              <a href="registration.html">
+                <div class="signup allbtn"><button>Sign Up</button></div></a
+              >
+  
+              <div class="account hide">m</div>
+              <div class="account-info hide">
+                <h4>mustaf hersi</h4>
+                <h5 class="myaccount"><i class="fa-solid fa-user "></i> my account</h5>
+                <h5 class="logout"><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+              </div>
             </div>
           </div>
+     <div class="bars"><i class="fa-solid fa-bars-staggered"></i></div>
         </div>
 
         <div class="content">
@@ -271,6 +273,14 @@
               })
       };
       displaycoursedetail();
+
+
+      let bars = document.querySelector(".bars i");
+      let left = document.querySelector(".left");
+              bars.onclick=()=>{
+                bars.classList.toggle("fa-xmark")
+               left.classList.toggle("open")
+      }
     </script>
   </body>
 </html>

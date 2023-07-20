@@ -4,6 +4,7 @@
 
 body{
     font-family: 'Signika Negative', sans-serif;
+    overflow-x: hidden;
 }
 
 *{
@@ -284,6 +285,7 @@ display: flex;
     background-color: #28a745;
     color: white;
     cursor: pointer;
+    margin-left: 20px;
 }
 
 .account-info{
@@ -359,4 +361,136 @@ h4,h5{
 
 .hide{
     display: none;
+}
+.bars {
+  display: none;
+}
+.bars i {
+  font-size: 25px;
+  color: rgb(5, 143, 136);
+}
+
+/* media quey navbar */
+
+@media only screen and (max-width: 1299px) {
+  section {
+    padding: 18px 10%;
+  }
+}
+
+@media only screen and (max-width: 973px) {
+  section {
+    padding: 18px 3%;
+  }
+}
+
+@media only screen and (max-width: 822px) {
+
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(213, 224, 221);
+    padding: 10px;
+    height: fit-content;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    position: absolute;
+    right: 0;
+  top: 100%;
+   right: -1000px;
+  }
+
+  .left.open {
+    right: 0;
+    transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -ms-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+  }
+  .menu {
+    border: 0;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+ 
+}
+  .logo {
+    display: flex;
+
+    /* height: 60px; */
+    align-items: center;
+  }
+  .menu .left ul {
+    display: flex;
+    margin-left: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .menu .left ul li {
+    margin-left: 0px;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 10px;
+    background-color: rgb(245, 241, 241);
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .menu .left ul li:hover {
+    background-color: rgb(237, 230, 230);
+    cursor: pointer;
+  }
+
+  .bars{
+    display: block;
+}
+}
+@media only screen and (max-width: 622px) {
+  .content {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 30px;
+  }
+  .right-content {
+    max-width: 100%;
+  
+  }
+}
+@media only screen and (max-width: 748px) {
+
+  .signUP {
+    /* max-width: 500px; */
+    width: 100%;
+display: flex;
+flex-direction: column;
+    padding: 10px;
+    margin: 20px;
+
+  }
+  .signUP img{
+    max-width: 100%;
+    width: 100%;
+    height: 400px;
+ margin-right: 20px;
+    object-fit: cover;
+  }
 }
