@@ -11,7 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="course.css" />
+    <link rel="stylesheet" href="block.css" />
   </head>
   <body>
     <div class="header">
@@ -64,8 +64,8 @@
 
         <div class="content">
           <div class="left-content">
-            <h4>Home // courses</h4>
-            <p>courses.</p>
+            <h4>Home//blog</h4>
+            <p>blog.</p>
           </div>
           <div class="right-content">
             <img src="images//co.avif" alt="" />
@@ -74,24 +74,14 @@
       </section>
     </div>
     <section>
-      <div class="courses">
-        <div class="search">
-          <input type="text" placeholder="search a course" />
-          <button>Search</button>
-        </div>
-        <div class="category">
-          <div class="subcat">
-
-          </div>
-        
-         
-        </div>
-      </div>
-      <div class="coursedisplay">
-
-        </div>
+ 
+    <div class="block">
+      
+   
      
-      </div>
+    </div>
+     
+     
     </section>
 
     <footer>
@@ -99,9 +89,9 @@
     </footer>
 
     <script>
-      let gategory=document.querySelector(".subcat")
-      let coursedisplay=document.querySelector(".coursedisplay")
+     
       let accountinfo = document.querySelector(".account-info")
+      let block = document.querySelector(".block")
       let account = document.querySelector(".account")
       let allbtn = document.querySelectorAll(".allbtn")
       let logout = document.querySelector(".logout");
@@ -110,131 +100,52 @@
     
     
     fetchData =async()=>{
-      let url="elearning/courses.json"
+      let url="elearning/blog.json"
     
       let response = await fetch(url)
 
       let getdatafromlocal = await response.json()
-      
-     let data = JSON.parse(localStorage.getItem("courses")) ? JSON.parse(localStorage.getItem("courses")) :  localStorage.setItem("courses" ,JSON.stringify(getdatafromlocal))
+      console.log(getdatafromlocal)
+     let data = JSON.parse(localStorage.getItem("block")) ? JSON.parse(localStorage.getItem("block")) :  localStorage.setItem("block" ,JSON.stringify(getdatafromlocal))
 
  
 
 
 
 
-    diplaygategories=()=>{
-      let mygategory=data.reduce(function(acc, element){
-      if(!acc.includes(element.category)){
-            acc.push(element.category)
-          }
-         return acc
-        },['all courses'])
-        mygategory.map(element => {
+ 
 
-          gategory.innerHTML +=`<div class="cat" data-id="${element}" >${element}</div>`
-        });
-
-
-      let filterdata=document.querySelectorAll('.cat');
-      filterdata.forEach((element,index) => {
-        if (index === 0) {
-          element.classList.add('active');
-  }
-        element.addEventListener('click',function(e) {
-  
-          filterdata.forEach(c => c.classList.remove('active'));
-          e.target.classList.add('active');
-
-          let filter=e.currentTarget.dataset.id;
-      const newGategory=data.filter(function(item){
-        if(item.category===filter){
-          return item
-        }
-      });
-
-      if(filter === "all courses"){
-        displaycourses(data)
-      }else{
-        displaycourses(newGategory)
-      }
-
-        });
-      });
-          }
-          search.addEventListener("keyup", (event) => {
-  const searchValue = event.target.value.trim().toLowerCase();
-  const filteredData = data.filter((item) => {
-    return item.title.toLowerCase().includes(searchValue);
-  });
-  displaycourses(filteredData);
-});
 
  
 
 
         
       displaycourses=(item)=>{
-        coursedisplay.innerHTML=''
+        block.innerHTML=''
       item.forEach(element => {
         // console.log(element)
-        coursedisplay.innerHTML+=`
-        <div class="card-course">
-                <div class="image-container">
-                
-                  <img src="${element.photo}"  class="img" data-courseid="${element.id}"/>
-                </div>
-                <div class="course-content">
-                  <p class="description">
-                    ${element.title}
-                  </p>
-
-                  <div class="horizontal">
-                    <div class="enroll"><i class="fa-solid fa-users"></i>Enroll:   ${element.enrollmentCount}</div>
-                    <div class="lessons">
-                      <i class="fa-solid fa-book"></i>    ${element.lessons.length} lessons
-                    </div>
-                    <div class="start-time">
-                      <i class="fa-regular fa-clock"></i><span>Start Date:</span>   ${element.start_date}
-                    </div>
-                  </div>
-                </div>
-              </div>`
+        block.innerHTML+=`
+        <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">${element.title}</h2>
+              <p class="card-author">By ${element.author}</p>
+            </div>
+            <div class="card-body">
+              <p class="card-text">${element.content}.</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-date">Date: ${element.date}</p>
+            </div>
+          </div>`
 
         
       });
       }
 
-      displaycoursedetail=()=>{
-        coursedisplay.addEventListener('click',(e)=>{
-  
-          if(e.target.classList.contains("img")){
-              const courseID=e.target.dataset.courseid
-           
-      const datafinded= data.find(newdata => newdata.id==courseID)
 
-     let selectedcourse=JSON.stringify(datafinded)
-
-
-      window.location.href=`courseDetails.html?selectedcourses=${encodeURIComponent(selectedcourse)}`
-
-  
- 
-          }
-          
-
-
-
-      
-        });
-      }
-          
-            
-          
-      displaycoursedetail()
+     
         displaycourses(data)
-        
-          diplaygategories()
+     
 
    let userdata = JSON.parse(localStorage.getItem('currentUser')) ;
 

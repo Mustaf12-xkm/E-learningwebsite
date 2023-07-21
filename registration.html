@@ -40,7 +40,7 @@
             <ul>
               <li><a href="index.html">home</a></li>
               <li><a href="courses.html">courses</a></li>
-              <li><a href="">block</a></li>
+              <li><a href="block.html">block</a></li>
               <li><a href="">contact</a></li>
             </ul>
             <div class="regitration">
@@ -141,7 +141,7 @@ let validemail;
 const isValid = isValidEmail(emailval);
 
 if (isValid) {
-  validemail=isValid;
+  validemail=emailval;
 } else {
   Swal.fire({
               title: "Please enter correct email",
@@ -178,8 +178,8 @@ if (isValid) {
   } else {
     let myData = {
       fullname: fullname.value,
-      email: email.value,
-      password: validemail,
+      email: validemail,
+      password:  password.value,
       confirmpassword: confirmpassword.value,
       enrolledCourses: []
     };

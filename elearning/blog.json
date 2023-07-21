@@ -1,142 +1,135 @@
 [
 	{
 		"id": 1,
-		"title": "Getting Started with JavaScript",
-		"author": "John Doe",
-		"date": "2023-07-01",
-		"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-	},
-	{
+		"title": "Introduction to HTML",
+		"author": "Jane Smith",
+		"date": "2022-01-10",
+		"content": "HTML (Hypertext Markup Language) is the standard markup language used to create web pages. In this course, you will learn the basics of HTML, including tags, attributes, and elements. By the end of the course, you will be able to create simple web pages using HTML."
+	  },
+	  {
 		"id": 2,
-		"title": "CSS Best Practices for Web Development",
-		"author": "Jane Smith",
-		"date": "2023-07-05",
-		"content": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-	},
-	{
-		"id": 3,
-		"title": "Introduction to Python Programming",
-		"author": "Michael Johnson",
-		"date": "2023-07-10",
-		"content": "Integer sed vestibulum leo. Phasellus eget ante eget nunc elementum convallis at non tellus."
-	},
-	{
-		"id": 4,
-		"title": "The Importance of Responsive Web Design",
-		"author": "Emily Davis",
-		"date": "2023-07-15",
-		"content": "Nullam ornare nunc nec posuere commodo. Sed malesuada neque et mauris placerat lobortis."
-	},
-	{
-		"id": 5,
-		"title": "Data Analysis with Pandas",
-		"author": "Daniel Martinez",
-		"date": "2023-07-20",
-		"content": "Curabitur suscipit ligula id sem tristique lobortis."
-	},
-	{
-		"id": 6,
-		"title": "Introduction to Machine Learning",
-		"author": "Olivia Taylor",
-		"date": "2023-07-25",
-		"content": "Fusce ultrices consectetur sapien, ac faucibus mi aliquet a."
-	},
-	{
-		"id": 7,
-		"title": "Mastering React.js",
-		"author": "Matthew Anderson",
-		"date": "2023-07-30",
-		"content": "Mauris ut justo vitae est fermentum efficitur."
-	},
-	{
-		"id": 8,
-		"title": "Fundamentals of UI/UX Design",
-		"author": "Ava Thomas",
-		"date": "2023-08-05",
-		"content": "Suspendisse at tellus non nisl efficitur bibendum."
-	},
-	{
-		"id": 9,
-		"title": "Java Programming Best Practices",
-		"author": "David Johnson",
-		"date": "2023-08-10",
-		"content": "Phasellus ultrices metus vitae sapien eleifend, eu fermentum erat volutpat."
-	},
-	{
-		"id": 10,
-		"title": "Cloud Computing: An Introduction",
-		"author": "Sarah Williams",
-		"date": "2023-08-15",
-		"content": "Donec vitae orci dapibus, rhoncus lacus id, dictum lorem."
-	},
-	{
-		"id": 11,
-		"title": "Building Modern Web Applications with Angular",
+		"title": "CSS Styling",
 		"author": "John Doe",
-		"date": "2023-08-20",
-		"content": "Sed vitae enim ac nisl vestibulum cursus."
-	},
-	{
-		"id": 12,
-		"title": "Introduction to Data Science",
-		"author": "Jane Smith",
-		"date": "2023-08-25",
-		"content": "Fusce non quam in nulla congue interdum."
-	},
-	{
-		"id": 13,
-		"title": "Ethical Hacking Techniques",
-		"author": "Michael Johnson",
-		"date": "2023-08-30",
-		"content": "Suspendisse sit amet nunc id tellus rhoncus vestibulum."
-	},
-	{
-		"id": 14,
-		"title": "iOS App Development with Swift",
-		"author": "Emily Davis",
-		"date": "2023-09-05",
-		"content": "Nulla vel odio eu enim auctor rhoncus ut sed nunc."
-	},
-	{
-		"id": 15,
-		"title": "Introduction to Database Management",
-		"author": "Daniel Martinez",
-		"date": "2023-09-10",
-		"content": "Quisque lobortis nulla ac justo ultrices, ac volutpat velit pharetra."
-	},
-	{
-		"id": 16,
-		"title": "Digital Marketing Strategies for Success",
-		"author": "Olivia Taylor",
-		"date": "2023-09-15",
-		"content": "Proin varius sapien sed fringilla cursus."
-	},
-	{
-		"id": 17,
-		"title": "C++ Programming: From Basics to Advanced",
-		"author": "Matthew Anderson",
-		"date": "2023-09-20",
-		"content": "Duis fermentum neque eu ipsum dignissim efficitur."
-	},
-	{
-		"id": 18,
-		"title": "Web Development with Flask",
-		"author": "Ava Thomas",
-		"date": "2023-09-25",
-		"content": "Vivamus posuere massa a mi bibendum vulputate."
-	},
-	{
-		"id": 19,
-		"title": "Introduction to Artificial Intelligence",
-		"author": "David Johnson",
-		"date": "2023-09-30",
-		"content": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-	},
-	{
-		"id": 20,
-		"title": "Fundamentals of Cybersecurity",
+		"date": "2022-02-15",
+		"content": "CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML. In this course, you will learn how to use CSS to style web pages, including selectors, properties, and values. By the end of the course, you will be able to create visually appealing web pages using CSS."
+	  },
+	  {
+		"id": 3,
+		"title": "JavaScript Basics",
 		"author": "Sarah Williams",
-		"date": "2023-10-05",
-		"content": "Fusce ac lectus id diam ultricies rhoncus."
-	}
+		"date": "2022-03-20",
+		"content": "JavaScript is a programming language used to create dynamic and interactive web pages. In this course, you will learn the basics of JavaScript, including variables, data types, functions, and control flow. By the end of the course, you will be able to add interactivity to your web pages using JavaScript."
+	  },
+	  {
+		"id": 4,
+		"title": "Responsive Web Design",
+		"author": "Michael Lee",
+		"date": "2022-04-25",
+		"content": "Responsive web design is an approach to web design that makes web pages render well on a variety of devices and screen sizes. In this course, you will learn how to create responsive web pages using CSS media queries, flexible grids, and responsive images. By the end of the course, you will be able to create web pages that look great on any device."
+	  },
+	  {
+		"id": 5,
+		"title": "Bootstrap Framework",
+		"author": "Emily Johnson",
+		"date": "2022-05-30",
+		"content": "Bootstrap is a popular CSS framework used for building responsive and mobile-first web pages. In this course, you will learn how to use Bootstrap to quickly create professional-looking web pages, including the grid system, navigation bars, forms, and buttons. By the end of the course, you will be able to use Bootstrap to create responsive web pages with ease."
+	  },
+	  {
+		"id": 6,
+		"title": "jQuery Basics",
+		"author": "David Kim",
+		"date": "2022-06-15",
+		"content": "jQuery is a fast, small, and feature-rich JavaScript library used to simplify HTML document traversal and manipulation, as well as event handling, animation, and Ajax. In this course, you will learn the basics of jQuery, including selectors, events, effects, and DOM manipulation. By the end of the course, you will be able to use jQuery to create dynamic and interactive web pages."
+	  },
+	  {
+		"id": 7,
+		"title": "PHP Programming",
+		"author": "Richard Lee",
+		"date": "2022-07-20",
+		"content": "PHP is a server-side scripting language used for web development. In this course, you will learn the basics of PHP programming, including variables, data types, control structures, functions, and arrays. By the end of the course, you will be able to create dynamic web pages and web applications using PHP."
+	  },
+	  {
+		"id": 8,
+		"title": "MySQL Database",
+		"author": "Jessica Wong",
+		"date": "2022-08-25",
+		"content": "MySQL is an open-source relational database management system used for web development. In this course, you will learn the basics of MySQL, including database design, data types, SQL syntax, and CRUD operations. By the end of the course, you will be able to create and manage databases using MySQL."
+	  },
+	  {
+		"id": 9,
+		"title": "Node.js Basics",
+		"author": "Kevin Chen",
+		"date": "2022-09-30",
+		"content": "Node.js is an open-source, cross-platform JavaScript runtime environment used for server-side programming. In this course, you will learn the basics of Node.js, including modules, file system, events, and streams. By the end of the course, you will be able to create server-side applications using Node.js."
+	  },
+	  {
+		"id": 10,
+		"title": "React Fundamentals",
+		"author": "Michelle Kwan",
+		"date": "2022-10-25",
+		"content": "React is a JavaScript library used for building user interfaces. In this course, you will learn the fundamentals of React, including components, props, state, and lifecycle methods. By the end of the course, you will be able to build simple React applications."
+	  },
+	  {
+		"id": 11,
+		"title": "Redux Basics",
+		"author": "Eric Liu",
+		"date": "2022-11-30",
+		"content": "Redux is a predictable state container for JavaScript applications. In this course, you will learn the basics of Redux, including actions, reducers, and the store. By the end of the course, you will be able to integrate Redux into your React applications."
+	  },
+	  {
+		"id": 12,
+		"title": "GraphQL Basics",
+		"author": "Rachel Chen",
+		"date": "2022-12-15",
+		"content": "GraphQL is a query language for APIs that provides a more efficient, powerful and flexible alternative to REST. In this course, you will learn the basics of GraphQL, including queries, mutations, and subscriptions. By the end of the course, you will be able to build GraphQL APIs and integrate them into your applications."
+	  },
+	  {
+		"id": 13,
+		"title": "Vue.js Fundamentals",
+		"author": "Daniel Huang",
+		"date": "2023-01-20",
+		"content": "Vue.js is a progressive JavaScript framework used for building user interfaces. In this course, you will learn the fundamentals of Vue.js, including components, templates, directives, and computed properties. By the end of the course, you will be able to build simple Vue.js applications."
+	  },
+	  {
+		"id": 14,
+		"title": "Nuxt.js Basics",
+		"author": "Sophie Li",
+		"date": "2023-02-25",
+		"content": "Nuxt.js is a framework for building server-side rendered (SSR) Vue.js applications. In this course, you will learn the basics of Nuxt.js, including server-side rendering, routing, and Vuex integration. By the end of the course, you will be able to build SSR Vue.js applications using Nuxt.js."
+	  },
+	  {
+		"id": 15,
+		"title": "Django Basics",
+		"author": "William Kim",
+		"date": "2023-03-30",
+		"content": "Django is a high-level Python web framework used for rapid development of web applications. In this course, you will learn the basics of Django, including models, views, templates, and forms. By the end of the course, you will be able to build simple web applications using Django."
+	  },
+	  {
+		"id": 16,
+		"title": "Flask Basics",
+		"author": "Lucy Chen",
+		"date": "2023-04-25",
+		"content": "Flask is a lightweight Python web framework used for building web applications. In this course, you will learn the basics of Flask, including routes, templates, and forms. By the end of the course, you will be able to build simple web applications using Flask."
+	  },
+	  {
+		"id": 17,
+		"title": "Ruby on Rails Basics",
+		"author": "Oliver Lee",
+		"date": "2023-05-30",
+		"content": "Ruby on Rails is a web application framework written in the Ruby programming language. In this course, you will learn the basics of Ruby on Rails, including models, views, controllers, and migrations. By the end of the course, you will be able to build simple web applications using Ruby on Rails."
+	  },
+	  {
+		"id": 18,
+		"title": "Express.js Basics",
+		"author": "Grace Wang",
+		"date": "2023-06-15",
+		"content": "Express.js is a popular Node.js framework used for building web applications. In this course, you will learn the basics of Express.js, including routes, middleware, and templates. By the end of the course, you will be able to build simple web applications using Express.js."
+	  },
+	  {
+		"id": 19,
+		"title": "MongoDB Basics",
+		"author": "Adam Liu",
+		"date": "2023-07-20",
+		"content": "MongoDB is a popular NoSQL database used for web development. In this course, you will learn the basics of MongoDB, including data modeling, CRUD operations, and the MongoDB query language. By the end of the course, you will be able to create and manage databases using MongoDB."
+	  }
 ]
