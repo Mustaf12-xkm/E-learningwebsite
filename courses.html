@@ -37,6 +37,7 @@
            
 
             <ul>
+
               <li><a href="index.html">home</a></li>
               <li><a href="courses.html">courses</a></li>
               <li><a href="">block</a></li>
@@ -161,24 +162,15 @@
         });
       });
           }
-
           search.addEventListener("keyup", (event) => {
+  const searchValue = event.target.value.trim().toLowerCase();
+  const filteredData = data.filter((item) => {
+    return item.title.toLowerCase().includes(searchValue);
+  });
+  displaycourses(filteredData);
+});
 
-           let searchvalue=search.value
-           const newproduct=data.filter(function(item){
-        if(item.title.trim()===searchvalue.trim()){
-          return item
-        }
-      });
-
-     if(searchvalue==''){
-      displaycourses(data)
-     }else{
-      displaycourses(newproduct)
-     }
-
-
-          });
+ 
 
 
         
