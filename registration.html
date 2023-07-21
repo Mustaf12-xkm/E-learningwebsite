@@ -129,6 +129,30 @@ const confirmpassword = document.querySelector(".confirm-password");
 submitbtn.addEventListener("click", (e) => {
   e.preventDefault();
 
+  function isValidEmail(email) {
+  // Regular expression to match email format
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Check if the email matches the regular expression
+  return regex.test(email);
+}
+const emailval = email.value;
+let validemail;
+const isValid = isValidEmail(emailval);
+
+if (isValid) {
+  validemail=isValid;
+} else {
+  Swal.fire({
+              title: "Please enter correct email",
+              // icon: 'question',
+              // iconHtml: '؟',
+              confirmButtonText: "ok"
+            });
+            return
+}
+
+
   if (
     fullname.value == "" ||
     email.value == "" ||
@@ -142,6 +166,8 @@ submitbtn.addEventListener("click", (e) => {
               confirmButtonText: "ok"
             });
   } 
+
+
   else if (password.value !== confirmpassword.value) {
     Swal.fire({
               title: "plz match passwords",
@@ -153,7 +179,7 @@ submitbtn.addEventListener("click", (e) => {
     let myData = {
       fullname: fullname.value,
       email: email.value,
-      password: password.value,
+      password: validemail,
       confirmpassword: confirmpassword.value,
       enrolledCourses: []
     };
