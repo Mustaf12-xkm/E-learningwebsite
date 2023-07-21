@@ -30,9 +30,9 @@
       <section>
         <div class="menu">
           <div class="logo">
-            <img src="images/logo.png" alt="" />
-            <h3>dugsiiye team</h3>
-          </div>
+            <a href="index.html" style="display: flex; align-items: center;" ><img src="images/logo.png" alt="" />
+              <h3>dugsiiye team</h3></a>
+            </div>
           <div class="left">
            
 
@@ -50,9 +50,9 @@
                 <div class="signup allbtn"><button>Sign Up</button></div></a
               >
   
-              <div class="account hide">m</div>
+              <div class="account hide"></div>
               <div class="account-info hide">
-                <h4>mustaf hersi</h4>
+                <h4 class="currentusername" ></h4>
                 <h5 class="myaccount"><i class="fa-solid fa-user "></i> my account</h5>
                 <h5 class="logout"><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
               </div>
@@ -112,6 +112,9 @@
       let userdata = JSON.parse(localStorage.getItem("currentUser"));
 
       if (userdata) {
+        let currentusername = document.querySelector(".currentusername")
+        currentusername.innerText = userdata.fullname
+        account.innerText = userdata.fullname.charAt(0);
         allbtn.forEach((element) => {
           element.classList.add("hide");
 
@@ -172,6 +175,8 @@
                 bars.classList.toggle("fa-xmark")
                left.classList.toggle("open")
       }
+
+   
     </script>
   </body>
 </html>

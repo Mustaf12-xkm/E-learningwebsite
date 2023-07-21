@@ -148,6 +148,12 @@ section {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  background: rgba( 113, 255, 134, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 6px );
+  -webkit-backdrop-filter: blur( 6px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .left-content {
   margin-right: 10px;
@@ -350,7 +356,7 @@ footer > p {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-
+  z-index: 100;
   -webkit-animation-name: rotateInDownRight;
   animation-name: rotateInDownRight;
   -webkit-animation-duration: 0.4s;
@@ -518,6 +524,7 @@ margin: 10px 0;
     position: absolute;
     right: 0;
   top: 100%;
+  z-index: 1000;
   visibility: hidden;
   }
 

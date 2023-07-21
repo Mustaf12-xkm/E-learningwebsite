@@ -125,6 +125,12 @@ section {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  background: rgba( 113, 255, 134, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 6px );
+  -webkit-backdrop-filter: blur( 6px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .left-content {
   margin-right: 10px;
@@ -299,6 +305,8 @@ word-wrap:break-word;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+ max-width: 450px;
+  width: 100%;
 }
 .card-course .image-container img:hover {
   transform: scale(1.1);
@@ -395,6 +403,8 @@ flex-direction: column;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 
+  z-index: 100;
+
 
 
 }
@@ -485,6 +495,7 @@ h4,h5{
     -o-border-radius: 5px;
     position: absolute;
     right: 0;
+    z-index: 1000;
   top: 100%;
   visibility: hidden;
   }
