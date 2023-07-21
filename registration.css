@@ -418,7 +418,11 @@ h4,h5{
 
 @media only screen and (max-width: 822px) {
 
+  .menu .left ul li a{
 
+    width: 100%;
+    height: 100%;
+  }
   .left {
     display: flex;
     flex-direction: column;

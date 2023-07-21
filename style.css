@@ -71,6 +71,11 @@ section {
   font-size: 20px;
   text-transform: capitalize;
 }
+.menu .left ul li a{
+
+  width: 100%;
+  height: 100%;
+}
 .logo {
   display: flex;
   align-items: center;
