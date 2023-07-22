@@ -11,7 +11,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="block.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="contact.css" />
   </head>
   <body>
     <div class="header">
@@ -40,7 +41,7 @@
               <li><a href="index.html">home</a></li>
               <li><a href="courses.html">courses</a></li>
               <li><a href="block.html">blog</a></li>
-              <li><a href="contact.html">contact</a></li>
+              <li><a href="">contact</a></li>
             </ul>
             <div class="regitration">
               <a href="login.html">
@@ -67,25 +68,42 @@
 
         <div class="content">
           <div class="left-content">
-            <h4>Home//blog</h4>
-            <p>blog.</p>
+            <h4>Home // contact</h4>
+            <p>contact us.</p>
           </div>
           <div class="right-content">
-            <img src="images//co.avif" alt="" />
+            <img src="images/kiosk-main-2.jpg" alt="" />
           </div>
         </div>
       </section>
     </div>
     <section>
-      <div class="block">
-     
-     
-   
-   
-       
-
-      
-      </div>
+        <div class="container">
+            <h1>Contact Us</h1>
+            <form>
+              <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="input-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+              <div class="input-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+              </div>
+              <div class="input-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button type="submit">Send</button>
+            </form>
+          </div>
     </section>
 
     <footer>
@@ -93,58 +111,20 @@
     </footer>
 
     <script>
-      let accountinfo = document.querySelector(".account-info");
-      let block = document.querySelector(".block");
+    
+    let accountinfo = document.querySelector(".account-info");
+  
       let account = document.querySelector(".account");
       let allbtn = document.querySelectorAll(".allbtn");
       let logout = document.querySelector(".logout");
       let myaccount = document.querySelector(".myaccount");
-      let search = document.querySelector(".search input");
+     
     
 
-      fetchData = async () => {
-        let url = "elearning/blog.json";
 
-        let response = await fetch(url);
+     
 
-        let getdatafromlocal = await response.json();
-    
-        let data = JSON.parse(localStorage.getItem("block")) || (function() {
-  let defaultData = getdatafromlocal;
-  localStorage.setItem("block", JSON.stringify(defaultData));
-  return defaultData;
-})();
-
-        displaycourses=(item)=>{
-          block.innerHTML=''
-        item.forEach(element => {
-          // console.log(element)
-          block.innerHTML+=`
-          <div class="card">
-          <div class="card-header">
-          <div class="img">
-            <img src="${element.image}" alt="">
-          </div>
-
-
-            <h2 class="card-title">${element.title}</h2>
-            <p class="card-author">By ${element.author}</p>
-          </div>
-          <div class="card-body">
-            <div class="learn-more">
-            <p class="read" >  Read more <i class="fa-solid fa-arrow-right"></i></p>
-            </div>
-             <p class="card-text hide">${element.content}.</p> 
-          </div>
-          <div class="card-footer">
-            <p class="card-date">Date: ${element.date}</p>
-          </div>
-        </div>`
-
-        });
-        }
-
-          displaycourses(data)
+     
 
         let userdata = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -168,10 +148,8 @@
         account.addEventListener("click", function () {
           accountinfo.classList.toggle("hide");
         });
-      };
-      let learnmore = document.querySelectorAll(".learn-more");
-      let cardtext = document.querySelectorAll(".card-text");
-      window.addEventListener("load", fetchData);
+
+
 
    
       myaccount.addEventListener("click", () => {
@@ -192,15 +170,7 @@
 
 
 
-      block.addEventListener("click", (e) => {
-
-        if(e.target.classList.contains("fa-solid")){
-          e.target.classList.toggle("rotate")
-        let card=  e.target.parentElement.parentElement.parentElement.querySelector(".card-text").classList.toggle("hide")
-
-     
-        }
-      });
+   
   
     </script>
   </body>
