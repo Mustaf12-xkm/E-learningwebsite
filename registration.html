@@ -31,12 +31,12 @@
       <section>
         <div class="menu">
           <div class="logo">
-            <a href="index.html" style="display: flex; align-items: center;" ><img src="images/logo.png" alt="" />
-              <h3>dugsiiye team</h3></a>
-            </div>
+            <a href="index.html" style="display: flex; align-items: center"
+              ><img src="images/logo.png" alt="" />
+              <h3>dugsiiye team</h3></a
+            >
+          </div>
           <div class="left">
-           
-
             <ul>
               <li><a href="index.html">home</a></li>
               <li><a href="courses.html">courses</a></li>
@@ -50,16 +50,20 @@
               <a href="registration.html">
                 <div class="signup allbtn"><button>Sign Up</button></div></a
               >
-  
+
               <div class="account hide"></div>
               <div class="account-info hide">
-                <h4 class="currentusername" ></h4>
-                <h5 class="myaccount"><i class="fa-solid fa-user "></i> my account</h5>
-                <h5 class="logout"><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+                <h4 class="currentusername"></h4>
+                <h5 class="myaccount">
+                  <i class="fa-solid fa-user"></i> my account
+                </h5>
+                <h5 class="logout">
+                  <i class="fa-solid fa-right-from-bracket"></i> logout
+                </h5>
               </div>
             </div>
           </div>
-     <div class="bars"><i class="fa-solid fa-bars-staggered"></i></div>
+          <div class="bars"><i class="fa-solid fa-bars-staggered"></i></div>
         </div>
 
         <div class="content">
@@ -73,179 +77,164 @@
         </div>
       </section>
     </div>
-<section>
-    <div class="container">
+    <section>
+      <div class="container">
         <h2>Registration Form</h2>
         <div class="signUP">
-
-
-         <img src="images/insert-image-file_22110-499.avif">
-
+          <img src="images/insert-image-file_22110-499.avif" />
 
           <form>
             <label>Full name</label>
-            <input type="text" class="fullname" placeholder="Enter full Name" />
-  
+            <input type="text" class="fullname" placeholder="Enter full Name" required />
+
             <label>Email</label>
-            <input type="email" class="email" placeholder="Enter Email" />
-  
+            <input type="email" class="email" placeholder="Enter Email" required />
+
             <label>password</label>
             <input
               type="text"
-              class="password"
+              class="password" required
               placeholder="Enter your password"
             />
-  
+
             <label>confirm password</label>
             <input
-              type="text"
+              type="text" required
               class="confirm-password"
               placeholder="confirm password"
             />
             <button class="submit" type="submit">Submit</button>
-            <p>I have an account <span class="span" >sign in</span></p>
+            <p>I have an account <span class="span">sign in</span></p>
           </form>
         </div>
       </div>
-</section>
+    </section>
 
     <footer>
       <p>&copy; Team dugsiiye</p>
     </footer>
 
     <script>
+      const submitbtn = document.querySelector(".submit");
+      let accountinfo = document.querySelector(".account-info");
+      let account = document.querySelector(".account");
+      let allbtn = document.querySelectorAll(".allbtn");
+      const fullname = document.querySelector(".fullname");
+      const span = document.querySelector(".span");
+      const email = document.querySelector(".email");
+      const password = document.querySelector(".password");
+      const confirmpassword = document.querySelector(".confirm-password");
 
+      submitbtn.addEventListener("click", (e) => {
+        e.preventDefault();
 
-const submitbtn = document.querySelector(".submit");
-let accountinfo = document.querySelector(".account-info")
-      let account = document.querySelector(".account")
-      let allbtn = document.querySelectorAll(".allbtn")
-const fullname = document.querySelector(".fullname");
-const span = document.querySelector(".span");
-const email = document.querySelector(".email");
-const password = document.querySelector(".password");
-const confirmpassword = document.querySelector(".confirm-password");
+        function isValidEmail(email) {
+          // Regular expression to match email format
+          const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-submitbtn.addEventListener("click", (e) => {
-  e.preventDefault();
+          // Check if the email matches the regular expression
+          return regex.test(email);
+        }
+        const emailval = email.value;
+        let validemail;
+        const isValid = isValidEmail(emailval);
+        validemail=emailval
 
-  function isValidEmail(email) {
-  // Regular expression to match email format
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  // Check if the email matches the regular expression
-  return regex.test(email);
-}
-const emailval = email.value;
-let validemail;
-const isValid = isValidEmail(emailval);
-
-if (isValid) {
-  validemail=emailval;
-} else {
-  Swal.fire({
+        if (
+          fullname.value == "" ||
+          email.value == "" ||
+          confirmpassword.value == "" ||
+          password.value == ""
+        ) {
+          Swal.fire({
+            title: "Please enter full informatin",
+            // icon: 'question',
+            // iconHtml: '؟',
+            confirmButtonText: "ok"
+          });
+ 
+     
+        } 
+        else if(isValid !==true){
+          Swal.fire({
               title: "Please enter correct email",
               // icon: 'question',
               // iconHtml: '؟',
               confirmButtonText: "ok"
             });
-            return
-}
+        }
+        else if (password.value !== confirmpassword.value) {
+          Swal.fire({
+            title: "plz match passwords",
+            // icon: 'question',
+            // iconHtml: '؟',
+            confirmButtonText: "ok"
+          });
+    
+       
+        } else {
+          let myData = {
+            fullname: fullname.value,
+            email: validemail,
+            password: password.value,
+            confirmpassword: confirmpassword.value,
+            enrolledCourses: []
+          };
 
+          let data = [];
+          data = JSON.parse(localStorage.getItem("users")) || [];
 
-  if (
-    fullname.value == "" ||
-    email.value == "" ||
-    confirmpassword.value == "" ||
-    password.value == ""
-  ) {
-    Swal.fire({
-              title: "Please enter full informatin",
-              // icon: 'question',
-              // iconHtml: '؟',
-              confirmButtonText: "ok"
-            });
-  } 
-
-
-  else if (password.value !== confirmpassword.value) {
-    Swal.fire({
-              title: "plz match passwords",
-              // icon: 'question',
-              // iconHtml: '؟',
-              confirmButtonText: "ok"
-            });
-  } else {
-    let myData = {
-      fullname: fullname.value,
-      email: validemail,
-      password:  password.value,
-      confirmpassword: confirmpassword.value,
-      enrolledCourses: []
-    };
-
-  let data = [];
-  data= JSON.parse( localStorage.getItem("users"))||[]
- 
-  if(data.some((data)=>{
-    return data.email==email.value
-
-  })){
-    Swal.fire({
+          if (
+            data.some((data) => {
+              return data.email == email.value;
+            })
+          ) {
+            Swal.fire({
               title: "duplicate data",
               // icon: 'question',
               // iconHtml: '؟',
               confirmButtonText: "ok"
             });
-  }else{
-    data.push(myData)
-  localStorage.setItem("users",JSON.stringify(data))
+          } else {
+            data.push(myData);
+            localStorage.setItem("users", JSON.stringify(data));
 
-  window.location.href='login.html'
+            window.location.href = "login.html";
+          }
+        }
+      });
+      span.addEventListener("click", () => {
+        window.location.href = "login.html";
+      });
 
-  }
-  }
-});
-span.addEventListener("click",()=>{
-  window.location.href='login.html'
-});
+      let userdata = JSON.parse(localStorage.getItem("currentUser"));
 
-let userdata = JSON.parse(localStorage.getItem('currentUser'));
-
-if(userdata){
-
-  let currentusername = document.querySelector(".currentusername")
-        currentusername.innerText = userdata.fullname
+      if (userdata) {
+        let currentusername = document.querySelector(".currentusername");
+        currentusername.innerText = userdata.fullname;
         account.innerText = userdata.fullname.charAt(0);
-  allbtn.forEach(element=>{
-element.classList.add("hide")
+        allbtn.forEach((element) => {
+          element.classList.add("hide");
 
-account.classList.remove("hide")
-  })
+          account.classList.remove("hide");
+        });
+      } else {
+        allbtn.forEach((element) => {
+          element.classList.remove("hide");
 
-}else{
-  allbtn.forEach(element=>{
-element.classList.remove("hide")
-
-account.classList.add("hide")
-  })
-
-}
-account.addEventListener("click", function() {
-        accountinfo.classList.toggle("hide")
-
-
-      })
+          account.classList.add("hide");
+        });
+      }
+      account.addEventListener("click", function () {
+        accountinfo.classList.toggle("hide");
+      });
 
       let bars = document.querySelector(".bars i");
       let left = document.querySelector(".left");
-              bars.onclick=()=>{
-                bars.classList.toggle("fa-xmark")
-               left.classList.toggle("open")
-      }
-
-
-
+      bars.onclick = () => {
+        bars.classList.toggle("fa-xmark");
+        left.classList.toggle("open");
+      };
     </script>
   </body>
 </html>
