@@ -1,5 +1,6 @@
 [
 	{
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png",
 		"id": 1,
 		"title": "Introduction to HTML",
 		"author": "Jane Smith",
@@ -7,6 +8,7 @@
 		"content": "HTML (Hypertext Markup Language) is the standard markup language used to create web pages. In this course, you will learn the basics of HTML, including tags, attributes, and elements. By the end of the course, you will be able to create simple web pages using HTML."
 	  },
 	  {
+		"image":"https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
 		"id": 2,
 		"title": "CSS Styling",
 		"author": "John Doe",
@@ -14,6 +16,7 @@
 		"content": "CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML. In this course, you will learn how to use CSS to style web pages, including selectors, properties, and values. By the end of the course, you will be able to create visually appealing web pages using CSS."
 	  },
 	  {
+		"image":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/512px-Unofficial_JavaScript_logo_2.svg.png",
 		"id": 3,
 		"title": "JavaScript Basics",
 		"author": "Sarah Williams",
@@ -21,6 +24,7 @@
 		"content": "JavaScript is a programming language used to create dynamic and interactive web pages. In this course, you will learn the basics of JavaScript, including variables, data types, functions, and control flow. By the end of the course, you will be able to add interactivity to your web pages using JavaScript."
 	  },
 	  {
+		"image":"https://www.searchenginejournal.com/wp-content/uploads/2021/10/responsive-web-design-1-61f01c4b64c5f-sej.png",
 		"id": 4,
 		"title": "Responsive Web Design",
 		"author": "Michael Lee",
@@ -28,6 +32,7 @@
 		"content": "Responsive web design is an approach to web design that makes web pages render well on a variety of devices and screen sizes. In this course, you will learn how to create responsive web pages using CSS media queries, flexible grids, and responsive images. By the end of the course, you will be able to create web pages that look great on any device."
 	  },
 	  {
+		"image":"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png",
 		"id": 5,
 		"title": "Bootstrap Framework",
 		"author": "Emily Johnson",
@@ -35,6 +40,7 @@
 		"content": "Bootstrap is a popular CSS framework used for building responsive and mobile-first web pages. In this course, you will learn how to use Bootstrap to quickly create professional-looking web pages, including the grid system, navigation bars, forms, and buttons. By the end of the course, you will be able to use Bootstrap to create responsive web pages with ease."
 	  },
 	  {
+		"image":"https://www.dammio.com/wp-content/uploads/2017/03/jquery-logo.png",
 		"id": 6,
 		"title": "jQuery Basics",
 		"author": "David Kim",
@@ -42,6 +48,7 @@
 		"content": "jQuery is a fast, small, and feature-rich JavaScript library used to simplify HTML document traversal and manipulation, as well as event handling, animation, and Ajax. In this course, you will learn the basics of jQuery, including selectors, events, effects, and DOM manipulation. By the end of the course, you will be able to use jQuery to create dynamic and interactive web pages."
 	  },
 	  {
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png",
 		"id": 7,
 		"title": "PHP Programming",
 		"author": "Richard Lee",
@@ -49,6 +56,7 @@
 		"content": "PHP is a server-side scripting language used for web development. In this course, you will learn the basics of PHP programming, including variables, data types, control structures, functions, and arrays. By the end of the course, you will be able to create dynamic web pages and web applications using PHP."
 	  },
 	  {
+		"image": "https://cdn.holistics.io/landing/databases/mysql.jpg",
 		"id": 8,
 		"title": "MySQL Database",
 		"author": "Jessica Wong",
@@ -56,6 +64,7 @@
 		"content": "MySQL is an open-source relational database management system used for web development. In this course, you will learn the basics of MySQL, including database design, data types, SQL syntax, and CRUD operations. By the end of the course, you will be able to create and manage databases using MySQL."
 	  },
 	  {
+		"image":"https://www.devteam.space/wp-content/uploads/2022/05/nodejs.jpg",
 		"id": 9,
 		"title": "Node.js Basics",
 		"author": "Kevin Chen",
@@ -63,6 +72,7 @@
 		"content": "Node.js is an open-source, cross-platform JavaScript runtime environment used for server-side programming. In this course, you will learn the basics of Node.js, including modules, file system, events, and streams. By the end of the course, you will be able to create server-side applications using Node.js."
 	  },
 	  {
+		"image": "https://www.datocms-assets.com/14946/1638186862-reactjs.png",
 		"id": 10,
 		"title": "React Fundamentals",
 		"author": "Michelle Kwan",
@@ -70,6 +80,7 @@
 		"content": "React is a JavaScript library used for building user interfaces. In this course, you will learn the fundamentals of React, including components, props, state, and lifecycle methods. By the end of the course, you will be able to build simple React applications."
 	  },
 	  {
+		"image": "https://daqxzxzy8xq3u.cloudfront.net/wp-content/uploads/2019/04/21032431/redux-cover-imgage-1024x768.jpg",
 		"id": 11,
 		"title": "Redux Basics",
 		"author": "Eric Liu",
@@ -77,6 +88,7 @@
 		"content": "Redux is a predictable state container for JavaScript applications. In this course, you will learn the basics of Redux, including actions, reducers, and the store. By the end of the course, you will be able to integrate Redux into your React applications."
 	  },
 	  {
+		"image": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*EOMP0V69RZ5xChG5pRoFyA.png",
 		"id": 12,
 		"title": "GraphQL Basics",
 		"author": "Rachel Chen",
@@ -85,6 +97,7 @@
 	  },
 	  {
 		"id": 13,
+		"image": "https://miro.medium.com/v2/resize:fit:900/1*OrjCKmou1jT4It5so5gvOA.jpeg",
 		"title": "Vue.js Fundamentals",
 		"author": "Daniel Huang",
 		"date": "2023-01-20",
@@ -92,19 +105,22 @@
 	  },
 	  {
 		"id": 14,
-		"title": "Nuxt.js Basics",
+		"image": "https://www.datocms-assets.com/75941/1657702552-nextlogoo_20211229163232_0.png",
+		"title": "Next.js Basics",
 		"author": "Sophie Li",
 		"date": "2023-02-25",
 		"content": "Nuxt.js is a framework for building server-side rendered (SSR) Vue.js applications. In this course, you will learn the basics of Nuxt.js, including server-side rendering, routing, and Vuex integration. By the end of the course, you will be able to build SSR Vue.js applications using Nuxt.js."
 	  },
 	  {
 		"id": 15,
+		"image": "https://img-c.udemycdn.com/course/750x422/4152006_54df_5.jpg",
 		"title": "Django Basics",
 		"author": "William Kim",
 		"date": "2023-03-30",
 		"content": "Django is a high-level Python web framework used for rapid development of web applications. In this course, you will learn the basics of Django, including models, views, templates, and forms. By the end of the course, you will be able to build simple web applications using Django."
 	  },
 	  {
+		"image": "https://codersera.com/blog/wp-content/uploads/2019/06/flask-python.png",
 		"id": 16,
 		"title": "Flask Basics",
 		"author": "Lucy Chen",
@@ -112,6 +128,7 @@
 		"content": "Flask is a lightweight Python web framework used for building web applications. In this course, you will learn the basics of Flask, including routes, templates, and forms. By the end of the course, you will be able to build simple web applications using Flask."
 	  },
 	  {
+		"image": "https://res.cloudinary.com/practicaldev/image/fetch/s--jvDLhx0b--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/cpcr5w0kgl6j94tss7n9.png",
 		"id": 17,
 		"title": "Ruby on Rails Basics",
 		"author": "Oliver Lee",
@@ -119,6 +136,7 @@
 		"content": "Ruby on Rails is a web application framework written in the Ruby programming language. In this course, you will learn the basics of Ruby on Rails, including models, views, controllers, and migrations. By the end of the course, you will be able to build simple web applications using Ruby on Rails."
 	  },
 	  {
+		"image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1681653721553/ac9a4c35-bf34-46f7-8fab-ff1f796979e1.jpeg?",
 		"id": 18,
 		"title": "Express.js Basics",
 		"author": "Grace Wang",
@@ -126,6 +144,7 @@
 		"content": "Express.js is a popular Node.js framework used for building web applications. In this course, you will learn the basics of Express.js, including routes, middleware, and templates. By the end of the course, you will be able to build simple web applications using Express.js."
 	  },
 	  {
+		"image": "https://www.commvault.com/wp-content/uploads/2019/08/mongodb-logo2.jpg?quality=80&w=930",
 		"id": 19,
 		"title": "MongoDB Basics",
 		"author": "Adam Liu",

@@ -116,7 +116,11 @@
 
       let getdatafromlocal = await response.json()
       
-     let data = JSON.parse(localStorage.getItem("courses")) ? JSON.parse(localStorage.getItem("courses")) :  localStorage.setItem("courses" ,JSON.stringify(getdatafromlocal))
+      let data = JSON.parse(localStorage.getItem("courses")) || (function() {
+  let defaultData = getdatafromlocal;
+  localStorage.setItem("courses", JSON.stringify(defaultData));
+  return defaultData;
+})();
 
  
 
@@ -265,8 +269,7 @@ account.addEventListener("click", function() {
             }
 
             window.addEventListener('load', fetchData);
-            
-            fetchData()
+           
             myaccount.addEventListener("click",()=>{
                 window.location.href="userAccount.html"
               })

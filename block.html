@@ -30,17 +30,16 @@
       <section>
         <div class="menu">
           <div class="logo">
-            <a href="index.html" style="display: flex; align-items: center;" ><img src="images/logo.png" alt="" />
-              <h3>dugsiiye team</h3></a>
-            </div>
+            <a href="index.html" style="display: flex; align-items: center"
+              ><img src="images/logo.png" alt="" />
+              <h3>dugsiiye team</h3></a
+            >
+          </div>
           <div class="left">
-           
-
             <ul>
-
               <li><a href="index.html">home</a></li>
               <li><a href="courses.html">courses</a></li>
-              <li><a href="block.html">block</a></li>
+              <li><a href="block.html">blog</a></li>
               <li><a href="">contact</a></li>
             </ul>
             <div class="regitration">
@@ -50,16 +49,20 @@
               <a href="registration.html">
                 <div class="signup allbtn"><button>Sign Up</button></div></a
               >
-  
+
               <div class="account hide"></div>
               <div class="account-info hide">
-                <h4 class="currentusername" ></h4>
-                <h5 class="myaccount"><i class="fa-solid fa-user "></i> my account</h5>
-                <h5 class="logout"><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+                <h4 class="currentusername"></h4>
+                <h5 class="myaccount">
+                  <i class="fa-solid fa-user"></i> my account
+                </h5>
+                <h5 class="logout">
+                  <i class="fa-solid fa-right-from-bracket"></i> logout
+                </h5>
               </div>
             </div>
           </div>
-     <div class="bars"><i class="fa-solid fa-bars-staggered"></i></div>
+          <div class="bars"><i class="fa-solid fa-bars-staggered"></i></div>
         </div>
 
         <div class="content">
@@ -74,14 +77,15 @@
       </section>
     </div>
     <section>
- 
-    <div class="block">
-      
+      <div class="block">
+     
+     
    
-     
-    </div>
-     
-     
+   
+       
+
+      
+      </div>
     </section>
 
     <footer>
@@ -89,113 +93,115 @@
     </footer>
 
     <script>
-     
-      let accountinfo = document.querySelector(".account-info")
-      let block = document.querySelector(".block")
-      let account = document.querySelector(".account")
-      let allbtn = document.querySelectorAll(".allbtn")
+      let accountinfo = document.querySelector(".account-info");
+      let block = document.querySelector(".block");
+      let account = document.querySelector(".account");
+      let allbtn = document.querySelectorAll(".allbtn");
       let logout = document.querySelector(".logout");
       let myaccount = document.querySelector(".myaccount");
       let search = document.querySelector(".search input");
     
+
+      fetchData = async () => {
+        let url = "elearning/blog.json";
+
+        let response = await fetch(url);
+
+        let getdatafromlocal = await response.json();
     
-    fetchData =async()=>{
-      let url="elearning/blog.json"
-    
-      let response = await fetch(url)
+        let data = JSON.parse(localStorage.getItem("block")) || (function() {
+  let defaultData = getdatafromlocal;
+  localStorage.setItem("block", JSON.stringify(defaultData));
+  return defaultData;
+})();
 
-      let getdatafromlocal = await response.json()
-      console.log(getdatafromlocal)
-     let data = JSON.parse(localStorage.getItem("block")) ? JSON.parse(localStorage.getItem("block")) :  localStorage.setItem("block" ,JSON.stringify(getdatafromlocal))
-
- 
-
-
-
-
- 
-
-
- 
+        displaycourses=(item)=>{
+          block.innerHTML=''
+        item.forEach(element => {
+          // console.log(element)
+          block.innerHTML+=`
+          <div class="card">
+          <div class="card-header">
+          <div class="img">
+            <img src="${element.image}" alt="">
+          </div>
 
 
-        
-      displaycourses=(item)=>{
-        block.innerHTML=''
-      item.forEach(element => {
-        // console.log(element)
-        block.innerHTML+=`
-        <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">${element.title}</h2>
-              <p class="card-author">By ${element.author}</p>
+            <h2 class="card-title">${element.title}</h2>
+            <p class="card-author">By ${element.author}</p>
+          </div>
+          <div class="card-body">
+            <div class="learn-more">
+            <p class="read" >  Read more <i class="fa-solid fa-arrow-right"></i></p>
             </div>
-            <div class="card-body">
-              <p class="card-text">${element.content}.</p>
-            </div>
-            <div class="card-footer">
-              <p class="card-date">Date: ${element.date}</p>
-            </div>
-          </div>`
+             <p class="card-text hide">${element.content}.</p> 
+          </div>
+          <div class="card-footer">
+            <p class="card-date">Date: ${element.date}</p>
+          </div>
+        </div>`
 
-        
+        });
+        }
+
+          displaycourses(data)
+
+        let userdata = JSON.parse(localStorage.getItem("currentUser"));
+
+        if (userdata) {
+          let currentusername = document.querySelector(".currentusername");
+          currentusername.innerText = userdata.fullname;
+          account.innerText = userdata.fullname.charAt(0);
+          allbtn.forEach((element) => {
+            element.classList.add("hide");
+
+            account.classList.remove("hide");
+          });
+        } else {
+          allbtn.forEach((element) => {
+            element.classList.remove("hide");
+
+            account.classList.add("hide");
+          });
+        }
+
+        account.addEventListener("click", function () {
+          accountinfo.classList.toggle("hide");
+        });
+      };
+      let learnmore = document.querySelectorAll(".learn-more");
+      let cardtext = document.querySelectorAll(".card-text");
+      window.addEventListener("load", fetchData);
+
+   
+      myaccount.addEventListener("click", () => {
+        window.location.href = "userAccount.html";
       });
-      }
+      logout.addEventListener("click", () => {
+        localStorage.removeItem("currentUser");
 
+        window.location.href = "index.html";
+      });
 
-     
-        displaycourses(data)
-     
-
-   let userdata = JSON.parse(localStorage.getItem('currentUser')) ;
-
-if(userdata){
-  let currentusername = document.querySelector(".currentusername")
-        currentusername.innerText = userdata.fullname
-        account.innerText = userdata.fullname.charAt(0);
-  allbtn.forEach(element=>{
-element.classList.add("hide")
-
-account.classList.remove("hide")
-  })
-
-}else{
-  allbtn.forEach(element=>{
-element.classList.remove("hide")
-
-account.classList.add("hide")
-  })
-
-}
-
-account.addEventListener("click", function() {
-        accountinfo.classList.toggle("hide")
-
-
-      })
-            }
-
-            window.addEventListener('load', fetchData);
-            
-            fetchData()
-            myaccount.addEventListener("click",()=>{
-                window.location.href="userAccount.html"
-              })
-              logout.addEventListener("click",()=>{
-                localStorage.removeItem("currentUser");
-
-
-                window.location.href="index.html"
-              })
-
-              let bars = document.querySelector(".bars i");
+      let bars = document.querySelector(".bars i");
       let left = document.querySelector(".left");
-              bars.onclick=()=>{
-                bars.classList.toggle("fa-xmark")
-               left.classList.toggle("open")
-      }
+      bars.onclick = () => {
+        bars.classList.toggle("fa-xmark");
+        left.classList.toggle("open");
+      };
 
-    
-            </script>
-        </body>
-      </html>
+
+
+      block.addEventListener("click", (e) => {
+
+        if(e.target.classList.contains("fa-solid")){
+          e.target.classList.toggle("rotate")
+        let card=  e.target.parentElement.parentElement.parentElement.querySelector(".card-text").classList.toggle("hide")
+
+     
+        }
+      });
+  
+    </script>
+  </body>
+</html>

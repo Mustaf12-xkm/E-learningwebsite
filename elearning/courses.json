@@ -11,17 +11,45 @@
 		"lessons": [
 			{
 				"id": 1,
-				"title": "Variables and Data Types",
+				"title": "JavaScript Variables.",
 				"duration": "1 hour",
-				"video": "https://www.youtube.com/embed/UU4ZQF-X9jE",
-				"content": "In this lesson, you will learn about variables and data types in JavaScript."
+				"video": "https://www.youtube.com/embed/l6isMLkTgSI",
+				"content": "In this lesson, you will learn about JavaScript Variables."
 			},
 			{
 				"id": 2,
-				"title": "Control Flow",
+				"title": "JavaScript Data Types.",
 				"duration": "1.5 hours",
-				"video": "https://www.youtube.com/embed/5tXTWBR8vqg",
-				"content": "This lesson covers control flow statements like if-else, switch, and loops."
+				"video": "https://www.youtube.com/embed/UmSpfdxu3ro",
+				"content": "This lesson covers JavaScript Data Types.."
+			},
+			{
+				"id": 3,
+				"title": "JavaScript Operators",
+				"duration": "1 hour",
+				"video": "https://www.youtube.com/embed/FZzyij43A54",
+				"content": "In this lesson, you will learn about JavaScript Operators."
+			},
+			{
+				"id": 4,
+				"title": "JavaScript If Statement",
+				"duration": "1.5 hours",
+				"video": "https://www.youtube.com/embed/IsG4Xd6LlsM",
+				"content": "This lesson covers JavaScript If Statement."
+			},
+			{
+				"id": 5,
+				"title": "JavaScript Switch",
+				"duration": "1 hour",
+				"video": "https://www.youtube.com/embed/fM5qnyasUYI",
+				"content": "In this lesson, you will learn about JavaScript Switch.."
+			},
+			{
+				"id": 6,
+				"title": "JavaScript Loop",
+				"duration": "1.5 hours",
+				"video": "https://www.youtube.com/embed/s9wW2PpJsmQ",
+				"content": "This lesson covers JavaScript Loop.."
 			}
 		],
 		"photo": "https://www.itgeared.com/wp-content/uploads/simple_JavaScript_image_thumbnail_viewer.jpg"
@@ -40,15 +68,36 @@
 				"id": 1,
 				"title": "Responsive Design",
 				"duration": "2 hours",
-				"video": "https://www.youtube.com/embed/OuoyXiP8E5Y",
+				"video": "https://www.youtube.com/embed/TUD1AWZVgQ8",
 				"content": "This lesson covers responsive design techniques for building websites."
 			},
 			{
 				"id": 2,
-				"title": "Advanced CSS",
+				"title": "Basic Databases and Data Schemas for a Website",
 				"duration": "1.5 hours",
-				"video": "https://www.youtube.com/embed/OuoyXiP8E5Y",
-				"content": "Learn advanced CSS features like flexbox and grid layouts."
+				"video": "https://www.youtube.com/embed/dam0GPOAvVI",
+				"content": "This lesson covers the basic databases and data schemas for a website."
+			},
+			{
+				"id": 3,
+				"title": "Advanced features of HTML, CSS",
+				"duration": "2 hours",
+				"video": "https://www.youtube.com/embed/XhqEuyWjbdo",
+				"content": "This lesson covers Advanced features of HTML, CSS."
+			},
+			{
+				"id": 4,
+				"title": "User Authentication and Security.",
+				"duration": "1.5 hours",
+				"video": "https://www.youtube.com/embed/F-sFp_AvHc8",
+				"content": "This lesson covers User Authentication and Security."
+			},
+			{
+				"id": 5,
+				"title": "Deploying a website",
+				"duration": "1.5 hours",
+				"video": "https://www.youtube.com/embed/NQP89ish9t8",
+				"content": "This lesson covers how to put a website online."
 			}
 		],
 		"photo": "https://www.web-development-institute.com/wp-content/uploads/2020/04/web-development-course-banner.jpg"
@@ -67,15 +116,36 @@
 				"id": 1,
 				"title": "Arrays and Linked Lists",
 				"duration": "2.5 hours",
-				"video": "https://www.youtube.com/embed/OuoyXiP8E5Y",
+				"video": "https://www.youtube.com/embed/Muo0UdwESn4",
 				"content": "Learn about arrays, linked lists, and their operations."
 			},
 			{
 				"id": 2,
 				"title": "Searching and Sorting",
 				"duration": "2 hours",
-				"video": "https://www.youtube.com/embed/OuoyXiP8E5Y",
+				"video": "https://www.youtube.com/embed/6LOwPhPDwVc",
 				"content": "Explore different searching and sorting algorithms."
+			},
+			{
+				"id": 3,
+				"title": "Binary Search Tree",
+				"duration": "2.5 hours",
+				"video": "https://www.youtube.com/embed/fAAZixBzIAI",
+				"content": "Learn about Binary Search Tree."
+			},
+			{
+				"id": 4,
+				"title": "Dynamic Programming ",
+				"duration": "2 hours",
+				"video": "https://www.youtube.com/embed/oBt53YbR9Kk",
+				"content": "This lesson covers about dynamic programming ."
+			},
+			{
+				"id": 5,
+				"title": "Graph In Data Structure",
+				"duration": "2.5 hours",
+				"video": "https://www.youtube.com/embed/-VgHk7UMPP4",
+				"content": "Learn about Graph In Data Structure."
 			}
 		],
 		"photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSItNqYGXeEWPjbTTH0yw1c45baXQj2atUKEZnkR8bbO8VRJXwPIg1sghhRY65KLoD1ueY&usqp=CAU"
@@ -94,15 +164,43 @@
 				"id": 1,
 				"title": "Introduction to Python",
 				"duration": "1.5 hours",
-				"video": "https://www.youtube.com/embed/OuoyXiP8E5Y",
+				"video": "https://www.youtube.com/embed/tA42nHmmEKw",
 				"content": "Get started with Python programming language."
 			},
 			{
 				"id": 2,
 				"title": "Data Analysis with Pandas",
 				"duration": "2 hours",
-				"video": "https://www.youtube.com/embed/OuoyXiP8E5Y",
+				"video": "https://www.youtube.com/embed/xi0vhXFPegw",
 				"content": "Explore data analysis techniques using Pandas library."
+			},
+			{
+				"id": 3,
+				"title": "Introduction to Python",
+				"duration": "1.5 hours",
+				"video": "https://www.youtube.com/embed/OuoyXiP8E5Y",
+				"content": "Get started with Python programming language."
+			},
+			{
+				"id": 4,
+				"title": "Classical Machine Learning",
+				"duration": "1 hours",
+				"video": "https://www.youtube.com/embed/N-l4wQY5kzM",
+				"content": "Classical Machine Learning."
+			},
+			{
+				"id": 5,
+				"title": "Data Storage and Big Data Frameworks",
+				"duration": "2 hours",
+				"video": "https://www.youtube.com/embed/jKCj4BxGTi8",
+				"content": "Data storage and big data frameworks."
+			},
+			{
+				"id": 6,
+				"title": "Data Visualization",
+				"duration": "2 hours",
+				"video": "https://www.youtube.com/embed/MiiANxRHSv4",
+				"content": "This Lesson covers Data visualizations."
 			}
 		],
 		"photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcMSVneJCKcxlHQ3PXHL1ig7LHvxRxUBchpQ&usqp=CAU"
@@ -119,17 +217,38 @@
 		"lessons": [
 			{
 				"id": 1,
-				"title": "HTML Basics",
+				"title": "Understand the Key Concepts of Visual Design",
 				"duration": "1.5 hours",
-				"video": "https://www.youtube.com/embed/OuoyXiP8E5Y",
-				"content": "Learn the basics of HTML markup language."
+				"video": "https://www.youtube.com/embed/yNDgFK2Jj1E",
+				"content": "Understand the key concepts of visual design."
 			},
 			{
 				"id": 2,
-				"title": "CSS Fundamentals",
+				"title": "Know the Basics of HTML",
 				"duration": "2 hours",
-				"video": "https://www.youtube.com/embed/OuoyXiP8E5Y",
-				"content": "Explore CSS properties and styles for web design."
+				"video": "https://www.youtube.com/embed/qz0aGYrrlhU",
+				"content": "Explore Know the basics of HTML."
+			},
+			{
+				"id": 3,
+				"title": "Understand CSS",
+				"duration": "1.5 hours",
+				"video": "https://www.youtube.com/embed/1Rs2ND1ryYc",
+				"content": "You will learn and understand the foundation of CSS."
+			},
+			{
+				"id": 4,
+				"title": "Understand the Basics of Creating Layouts",
+				"duration": "2 hours",
+				"video": "https://www.youtube.com/embed/MlsV3hu84as",
+				"content": "Understand the basics of creating layouts."
+			},
+			{
+				"id": 5,
+				"title": "Learn about Typography ",
+				"duration": "1.5 hours",
+				"video": "https://www.youtube.com/embed/yAuUDyUC-GM",
+				"content": "Learn about typography ."
 			}
 		],
 		"photo": "https://image.slidesharecdn.com/webdesignfundamentals-141119173538-conversion-gate01/75/web-design-fundamentals-1-2048.jpg?cb=1669307554"

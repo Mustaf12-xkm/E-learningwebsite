@@ -205,30 +205,67 @@ footer > p {
   cursor: pointer;
   margin-left: 20px;
 }
+.block{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+  padding-bottom: 30px;
+}
+
+/* nasir */
+
+
 .card {
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 20px;
+    /* max-width: 350px; */
   }
-  
+  .card-header .img{
+    max-width: 100%;
+
+   height: 200px;
+  }
+  .card-header img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+
   .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    flex-direction: column;
   }
-  
+  .learn-more{
+   text-align: center;
+   color: #007bff;
+   cursor: pointer;
+  }
   .card-title {
     font-size: 24px;
-    margin: 0;
+    margin: 10px 0; 
+    
   }
-  
+.rotate{
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+
+}
   .card-author {
     font-size: 16px;
     margin: 0;
   }
-  
+  .card-text.hide{
+    visibility: hidden;
+  }
   .card-body {
     margin-bottom: 10px;
   }
