@@ -329,7 +329,7 @@ footer > p {
   padding: 15px 35px;
   font-size: 20px;
   border-radius: 10px;
-  -webkit-border-radius: 10px;
+  -webkit-border-radius: 10px;                                                                                                            
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
@@ -338,6 +338,13 @@ footer > p {
   text-transform: capitalize;
   color: white;
   cursor: pointer;
+}
+.swal-button-confirm {
+  background-color: #28a745 !important;
+}
+
+.swal-button-cancel {
+  background-color: #28a745 !important;
 }
 .account{
   background-color: #007bff;

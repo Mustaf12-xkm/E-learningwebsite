@@ -27,16 +27,16 @@
           <i class="fa-brands fa-skype"></i>
         </div>
       </div>
-  
+
       <section>
         <div class="menu">
           <div class="logo">
-            <a href="index.html" style="display: flex; align-items: center;" ><img src="images/logo.png" alt="" />
-              <h3>dugsiiye team</h3></a>
-            </div>
+            <a href="index.html" style="display: flex; align-items: center"
+              ><img src="images/logo.png" alt="" />
+              <h3>dugsiiye team</h3></a
+            >
+          </div>
           <div class="left">
-           
-
             <ul>
               <li><a href="index.html">home</a></li>
               <li><a href="courses.html">courses</a></li>
@@ -50,16 +50,20 @@
               <a href="registration.html">
                 <div class="signup allbtn"><button>Sign Up</button></div></a
               >
-  
+
               <div class="account hide"></div>
               <div class="account-info hide">
-                <h4 class="currentusername" ></h4>
-                <h5 class="myaccount"><i class="fa-solid fa-user "></i> my account</h5>
-                <h5 class="logout"><i class="fa-solid fa-right-from-bracket"></i> logout</h5>
+                <h4 class="currentusername"></h4>
+                <h5 class="myaccount">
+                  <i class="fa-solid fa-user"></i> my account
+                </h5>
+                <h5 class="logout">
+                  <i class="fa-solid fa-right-from-bracket"></i> logout
+                </h5>
               </div>
             </div>
           </div>
-     <div class="bars"><i class="fa-solid fa-bars-staggered"></i></div>
+          <div class="bars"><i class="fa-solid fa-bars-staggered"></i></div>
         </div>
 
         <div class="content">
@@ -86,12 +90,19 @@
           <div class="coursedetail">
             <h2>course details</h2>
             <div id="videoContainer"></div>
-       
+
             <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <iframe id="videoIframe" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-                </div>
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe
+                  id="videoIframe"
+                  width="560"
+                  height="315"
+                  src=""
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
@@ -154,7 +165,6 @@
       let dura = document.querySelector(".content-detail .dura");
       let video = document.querySelector(".video");
       let orderbtn = document.querySelector(".orderbtn button");
-     
 
       let accountinfo = document.querySelector(".account-info");
       let account = document.querySelector(".account");
@@ -201,59 +211,55 @@
       //           <h5 >${element.content}  <p class="description">${element.title} </p></h5>
       //         </div>`;
 
-             
-
       // });
       var videoContainer = document.getElementById("videoContainer");
-var modal = document.getElementById("myModal");
-var closeSpan = document.getElementsByClassName("close")[0];
-var videoIframe = document.getElementById("videoIframe");
+      var modal = document.getElementById("myModal");
+      var closeSpan = document.getElementsByClassName("close")[0];
+      var videoIframe = document.getElementById("videoIframe");
 
-// Example data (replace with your actual data)
+      // Example data (replace with your actual data)
 
-
-// Create video elements
-decodeddata.lessons.forEach((element, index) => {
-    var videoElement = document.createElement("div");
-    videoElement.classList.add("title");
-    videoElement.innerHTML = `
+      // Create video elements
+      decodeddata.lessons.forEach((element, index) => {
+        var videoElement = document.createElement("div");
+        videoElement.classList.add("title");
+        videoElement.innerHTML = `
         <i class="fa-solid fa-circle-play"></i>
         <h5>${element.content}<p class="description">${element.title}</p></h5>
     `;
-    if (index === 0) {
-        videoElement.addEventListener("click", function() {
+        if (index === 0) {
+          videoElement.addEventListener("click", function () {
             openModal(element.video);
-        });
-        videoElement.classList.add("free");
-        videoElement.style.cursor= 'pointer';
-    }
-    videoContainer.appendChild(videoElement);
-});
+          });
+          videoElement.classList.add("free");
+          videoElement.style.cursor = "pointer";
+        }
+        videoContainer.appendChild(videoElement);
+      });
 
+      function openModal(videoUrl) {
+        modal.style.display = "block";
+        videoIframe.src = videoUrl + "?autoplay='1'";
+      }
 
-function openModal(videoUrl) {
-    modal.style.display = "block";
-    videoIframe.src = videoUrl + "?autoplay='1'";
-}
+      // Close the modal and stop the video
+      function closeModal() {
+        modal.style.display = "none";
+        videoIframe.src = "";
+      }
 
-// Close the modal and stop the video
-function closeModal() {
-    modal.style.display = "none";
-    videoIframe.src = "";
-}
-
-// Event listeners for closing the modal
-closeSpan.onclick = closeModal;
-window.onclick = function(event) {
-    if (event.target == modal) {
-        closeModal();
-    }
-};
+      // Event listeners for closing the modal
+      closeSpan.onclick = closeModal;
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          closeModal();
+        }
+      };
       let userdata = JSON.parse(localStorage.getItem("currentUser"));
 
       if (userdata) {
-        let currentusername = document.querySelector(".currentusername")
-        currentusername.innerText = userdata.fullname
+        let currentusername = document.querySelector(".currentusername");
+        currentusername.innerText = userdata.fullname;
         account.innerText = userdata.fullname.charAt(0);
         allbtn.forEach((element) => {
           element.classList.add("hide");
@@ -269,106 +275,95 @@ window.onclick = function(event) {
       }
 
       displaycoursedetail = () => {
-        let users = JSON.parse(localStorage.getItem("users"))|| []
-            let currentUser = JSON.parse(localStorage.getItem("currentUser")) || []
-            let foundeduser=users.find(user=>user.email===currentUser.email)
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+        let currentUser = JSON.parse(localStorage.getItem("currentUser")) || [];
+        let foundeduser = users.find(
+          (user) => user.email === currentUser.email
+        );
 
         orderbtn.addEventListener("click", (e) => {
-          
           if (!userdata) {
             Swal.fire({
-  title: "Before ordering the course, please log in",
-  confirmButtonText: "OK"
-}).then((result) => {
-  if (result.isConfirmed) {
-    window.location.href = "login.html";
+              title: "Before ordering the course, please log in",
+              showCancelButton: true,
+  confirmButtonText: "OK",
+  cancelButtonText: "Cancel",
+  customClass: {
+    confirmButton: "swal-button-confirm",
+    cancelButton: "swal-button-cancel"
   }
-});
-          
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = "login.html";
+              }
+            });
           }
-          
+
           if (foundeduser) {
-
-            if(foundeduser.enrolledCourses.some(enrolled=>enrolled.id===decodeddata.id)){
+            if (
+              foundeduser.enrolledCourses.some(
+                (enrolled) => enrolled.id === decodeddata.id
+              )
+            ) {
               let selectedcourse = JSON.stringify(decodeddata);
-            window.location.href = `coursdisplay.html?selectedcourses=${encodeURIComponent(
-              selectedcourse
-            )}`;
+              window.location.href = `coursdisplay.html?selectedcourses=${encodeURIComponent(
+                selectedcourse
+              )}`;
+            } else {
+              foundeduser.enrolledCourses.push(decodeddata);
 
+              let storagecourses = JSON.parse(localStorage.getItem("courses"));
 
-              }else{
-                foundeduser.enrolledCourses.push(decodeddata)
-          
+              let foundeddourse = storagecourses.find(
+                (c) => c.id === decodeddata.id
+              );
 
-                let storagecourses=JSON.parse(localStorage.getItem("courses"))
-                
-             
+              foundeddourse.enrollmentCount++;
+              console.log(foundeddourse);
 
-              let foundeddourse=  storagecourses.find(c=>c.id===decodeddata.id)
+              localStorage.setItem("courses", JSON.stringify(storagecourses));
 
-
-           foundeddourse.enrollmentCount ++
-           console.log(foundeddourse)
-
-
-           localStorage.setItem("courses" ,JSON.stringify(storagecourses))
-
-       
-
-
-                localStorage.setItem("users", JSON.stringify(users))
+              localStorage.setItem("users", JSON.stringify(users));
               let selectedcourse = JSON.stringify(decodeddata);
-            window.location.href = `coursdisplay.html?selectedcourses=${encodeURIComponent(
-              selectedcourse
-            )}`;
-
-
-              }
-              
-              }else {
-            console.log("user not found")
-
-
-
+              window.location.href = `coursdisplay.html?selectedcourses=${encodeURIComponent(
+                selectedcourse
+              )}`;
+            }
+          } else {
+            console.log("user not found");
           }
+        });
 
-        
-          } )
-      
+        if (foundeduser) {
+          if (
+            foundeduser.enrolledCourses.some(
+              (enrolled) => enrolled.id === decodeddata.id
+            )
+          ) {
+            button.textContent = "continue learning";
+          }
+        } else {
+          return;
+        }
 
-     if(foundeduser){
-      if(foundeduser.enrolledCourses.some(enrolled=>enrolled.id===decodeddata.id)){
-                button.textContent ="continue learning"
+        myaccount.addEventListener("click", () => {
+          window.location.href = "userAccount.html";
+        });
+        logout.addEventListener("click", () => {
+          localStorage.removeItem("currentUser");
 
-
-              }
-     }else{
-      return
-     }
-       
-   
-              myaccount.addEventListener("click",()=>{
-                window.location.href="userAccount.html"
-              })
-              logout.addEventListener("click",()=>{
-                localStorage.removeItem("currentUser");
-
-
-                window.location.href="index.html"
-              })
+          window.location.href = "index.html";
+        });
       };
       displaycoursedetail();
 
-
       let bars = document.querySelector(".bars i");
       let left = document.querySelector(".left");
-              bars.onclick=()=>{
-                bars.classList.toggle("fa-xmark")
-               left.classList.toggle("open")
-      }
-// Get the modal element
-
-
+      bars.onclick = () => {
+        bars.classList.toggle("fa-xmark");
+        left.classList.toggle("open");
+      };
+      // Get the modal element
     </script>
   </body>
 </html>
