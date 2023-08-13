@@ -27,7 +27,7 @@
           <i class="fa-brands fa-skype"></i>
         </div>
       </div>
-
+  
       <section>
         <div class="menu">
           <div class="logo">
@@ -85,7 +85,14 @@
           </div>
           <div class="coursedetail">
             <h2>course details</h2>
-            <div class="video"></div>
+            <div id="videoContainer"></div>
+       
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <iframe id="videoIframe" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
           </div>
         </div>
         <div class="right-description">
@@ -188,12 +195,60 @@
       instructor.innerText = decodeddata.instructor;
       dura.innerText = `${lastdata} hours`;
 
-      decodeddata.lessons.forEach((element) => {
-        video.innerHTML += `<div class="title">
-                <i class="fa-solid fa-circle-play"></i>
-                <h5 >${element.content}  <p class="description">${element.title} </p></h5>
-              </div>`;
-      });
+      // decodeddata.lessons.forEach((element) => {
+      //   video.innerHTML += `<div class="title">
+      //           <i class="fa-solid fa-circle-play"></i>
+      //           <h5 >${element.content}  <p class="description">${element.title} </p></h5>
+      //         </div>`;
+
+             
+
+      // });
+      var videoContainer = document.getElementById("videoContainer");
+var modal = document.getElementById("myModal");
+var closeSpan = document.getElementsByClassName("close")[0];
+var videoIframe = document.getElementById("videoIframe");
+
+// Example data (replace with your actual data)
+
+
+// Create video elements
+decodeddata.lessons.forEach((element, index) => {
+    var videoElement = document.createElement("div");
+    videoElement.classList.add("title");
+    videoElement.innerHTML = `
+        <i class="fa-solid fa-circle-play"></i>
+        <h5>${element.content}<p class="description">${element.title}</p></h5>
+    `;
+    if (index === 0) {
+        videoElement.addEventListener("click", function() {
+            openModal(element.video);
+        });
+        videoElement.classList.add("free");
+        videoElement.style.cursor= 'pointer';
+    }
+    videoContainer.appendChild(videoElement);
+});
+
+
+function openModal(videoUrl) {
+    modal.style.display = "block";
+    videoIframe.src = videoUrl + "?autoplay='1'";
+}
+
+// Close the modal and stop the video
+function closeModal() {
+    modal.style.display = "none";
+    videoIframe.src = "";
+}
+
+// Event listeners for closing the modal
+closeSpan.onclick = closeModal;
+window.onclick = function(event) {
+    if (event.target == modal) {
+        closeModal();
+    }
+};
       let userdata = JSON.parse(localStorage.getItem("currentUser"));
 
       if (userdata) {
@@ -222,10 +277,14 @@
           
           if (!userdata) {
             Swal.fire({
-              title: "before order the course make login",
-           
-              confirmButtonText: "ok"
-            });
+  title: "Before ordering the course, please log in",
+  confirmButtonText: "OK"
+}).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = "login.html";
+  }
+});
+          
           }
           
           if (foundeduser) {
@@ -307,6 +366,7 @@
                 bars.classList.toggle("fa-xmark")
                left.classList.toggle("open")
       }
+// Get the modal element
 
 
     </script>

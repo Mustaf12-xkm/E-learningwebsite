@@ -213,7 +213,10 @@ footer > p {
 }
 
 /* courses */
+.left-Description{
+  position: relative;
 
+}
 .coursesdetail {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -250,6 +253,7 @@ footer > p {
 }
 .coursedetail {
   font-size: 18px;
+  position: relative;
 }
 .coursedetail h2 {
   padding: 10px 0 25px 0px;
@@ -285,7 +289,14 @@ footer > p {
   text-transform: uppercase;
   border-bottom: 1px solid #eee;
 }
-
+.title.free::after {
+  content: "Previw";
+  background-color: green;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 20px;
+}
 .right-description .card .content-detail.s {
   padding-top: 25px;
 }
@@ -326,6 +337,7 @@ footer > p {
   background-color: rgb(48, 146, 85);
   text-transform: capitalize;
   color: white;
+  cursor: pointer;
 }
 .account{
   background-color: #007bff;
@@ -413,7 +425,7 @@ h4,h5{
   /* background-color: #ccc; */
   margin-bottom: 10px;
   font-size: 16px;
-  cursor: pointer;
+
 
 }
 
@@ -522,6 +534,74 @@ h4,h5{
   .bars{
     display: block;
 }
+#videoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 960px;
+  margin: 40px auto;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title h5 {
+  margin: 0;
+}
+
+.fa-circle-play {
+  color: #3f51b5;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.description {
+  color: #666;
+  font-size: 14px;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f3e8e8;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80%;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #888;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.close:hover {
+  color: #333;
+}
+
+
 }
 @media only screen and (max-width: 622px) {
   .content {
